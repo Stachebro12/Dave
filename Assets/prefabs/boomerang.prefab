@@ -148,9 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TTReturn: 1
+  playerg: {fileID: 0}
   player: {fileID: 92869748013023871, guid: 2112a643f68492c45b6f7dc889d55d2e, type: 3}
-  speed: 7
-  velocity: 5
+  speed: 15
+  velocity: 10
 --- !u!114 &6047304423852703080
 MonoBehaviour:
   m_ObjectHideFlags: 0

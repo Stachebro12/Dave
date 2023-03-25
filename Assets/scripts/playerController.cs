@@ -27,18 +27,22 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(downKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(0, -distY, 0));
+            transform.localRotation = Quaternion.Euler(0, 0, 180);
         }
         if (Input.GetKey(upKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(0, distY, 0));
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey(rightKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(distX, 0, 0));
+            transform.localRotation = Quaternion.Euler(0, 0, 270);
         }
         if (Input.GetKey(leftKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(-distX, 0, 0));
+            transform.localRotation = Quaternion.Euler(0, 0, 90);
         }
         if (Input.GetKey(upKey) && Input.GetKey(rightKey))
         {
