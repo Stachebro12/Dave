@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 72783462}
   - component: {fileID: 72783464}
   - component: {fileID: 72783463}
+  - component: {fileID: 72783465}
   m_Layer: 5
   m_Name: PP
   m_TagString: Untagged
@@ -203,6 +204,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72783461}
   m_CullTransparentMesh: 1
+--- !u!114 &72783465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72783461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf25db5e8abcb944a638a75fad5d86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PPText: {fileID: 72783463}
+  ppNum: 10
 --- !u!1 &122392163
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,12 +906,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1381588827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd472bfe9b1ff04c9732fe63320cf42, type: 3}
+  m_Script: {fileID: 11500000, guid: b1934ea52c93f2c419570ca6419762df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: 120
   instantiate: {fileID: 4548553071795274045, guid: b6785cc0e13d0144cb2a6330e33ee094, type: 3}
   delayTime: 0
+  player: {fileID: 1316475961}
+  cost: 1
 --- !u!1 &1465451849
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,12 +956,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1465451849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044a1bae01daaf246aeda9fb487b6cb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a0b1c11561ea314595f029ff6efa2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 120
   weapon: {fileID: 1793126284}
+  pp: {fileID: 72783461}
   StabTime: 0.5
+  cost: 1
 --- !u!1 &1728928116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,13 +1226,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1850814389}
   - component: {fileID: 1850814390}
+  - component: {fileID: 1850814391}
   m_Layer: 0
   m_Name: Croissant spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1850814389
 Transform:
   m_ObjectHideFlags: 0
@@ -1244,6 +1264,23 @@ MonoBehaviour:
   key: 122
   instantiate: {fileID: 6047304423852703086, guid: a19237113854f8b42848377eac69386e, type: 3}
   delayTime: 0
+--- !u!114 &1850814391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850814388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e0c00e1d197b940a9cb87c77e41449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 122
+  instantiate: {fileID: 6047304423852703086, guid: a19237113854f8b42848377eac69386e, type: 3}
+  delayTime: 0
+  pp: {fileID: 72783461}
+  cost: 1
 --- !u!1 &2047676998
 GameObject:
   m_ObjectHideFlags: 0
