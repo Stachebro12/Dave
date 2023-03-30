@@ -1,28 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class sword : MonoBehaviour
+public class PPsword : MonoBehaviour
 {
     public KeyCode attack;
     public GameObject weapon;
+    public GameObject pp;
     public float StabTime;
-
+    public int cost;
+    
+    private float ppAmount;
     private float timer = 0;
     private float DelayTime;
     // Update is called once per frame
     void Update()
     {
+        ppAmount = pp.GetComponentInChildren<PP>().ppNum;
         if (timer > 0)
         {
             timer -= Time.deltaTime;
             return;
         }
 
-        if (Input.GetKeyDown(attack))
+        if (Input.GetKeyDown(attack) && ppAmount > 0)
         {
             weapon.SetActive(true);
+            pp.GetComponentInChildren<PP>().UsePP(cost);
             DelayTime = StabTime;
             DelayTime += 0.1f;
             timer = DelayTime;

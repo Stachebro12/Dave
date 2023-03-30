@@ -14,6 +14,6 @@ public class Money_count : MonoBehaviour
     {
         float money = Player.GetComponent<Money_Collect>().MoneyNum;
 
-        Money.text = "Money: " + money;
+        Money.text = "Money: $" + money;
     }
 }
