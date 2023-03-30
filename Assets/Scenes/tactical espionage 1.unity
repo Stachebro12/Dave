@@ -881,7 +881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1381588828
 Transform:
   m_ObjectHideFlags: 0
@@ -930,7 +930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465451850
 Transform:
   m_ObjectHideFlags: 0
@@ -1225,7 +1225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850814389}
-  - component: {fileID: 1850814390}
   - component: {fileID: 1850814391}
   m_Layer: 0
   m_Name: Croissant spawner
@@ -1249,21 +1248,6 @@ Transform:
   m_Father: {fileID: 1316475965}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1850814390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850814388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd472bfe9b1ff04c9732fe63320cf42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 122
-  instantiate: {fileID: 6047304423852703086, guid: a19237113854f8b42848377eac69386e, type: 3}
-  delayTime: 0
 --- !u!114 &1850814391
 MonoBehaviour:
   m_ObjectHideFlags: 0
