@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5774791278586408942
+--- !u!1 &4043675405470566865
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4548553071795274045}
-  - component: {fileID: 1728088520933244820}
-  - component: {fileID: 2235478734428955080}
-  - component: {fileID: 6585962042165968677}
-  - component: {fileID: 6976918203943649041}
-  m_Layer: 8
-  m_Name: coin
+  - component: {fileID: 4043675405470566878}
+  - component: {fileID: 4043675405470566879}
+  - component: {fileID: 4043675405470566864}
+  - component: {fileID: 4043675405470566877}
+  - component: {fileID: 4635624584638388403}
+  m_Layer: 9
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4548553071795274045
+--- !u!4 &4043675405470566878
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5774791278586408942}
+  m_GameObject: {fileID: 4043675405470566865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018249094, y: 0.20160437, z: 0}
-  m_LocalScale: {x: 0.20451, y: 0.20451, z: 0.20451}
+  m_LocalPosition: {x: -13.13, y: 0.09, z: 0}
+  m_LocalScale: {x: 0.5875, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1728088520933244820
+--- !u!212 &4043675405470566879
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5774791278586408942}
+  m_GameObject: {fileID: 4043675405470566865}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -87,50 +87,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2235478734428955080
+--- !u!114 &4043675405470566864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5774791278586408942}
+  m_GameObject: {fileID: 4043675405470566865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c30e26527c3848a49997b2dce8c41337, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fc031c3b087c904097217746ef064a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
---- !u!50 &6585962042165968677
-Rigidbody2D:
-  serializedVersion: 4
+  Value: 1
+--- !u!61 &4043675405470566877
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5774791278586408942}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GameObject: {fileID: 4043675405470566865}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &6976918203943649041
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &4635624584638388403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5774791278586408942}
+  m_GameObject: {fileID: 4043675405470566865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d233d6db53d91a49b74be66794e56e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 08314193b6a9ebd4cbf8f14904096b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  parent: {fileID: 4043675405470566865}
