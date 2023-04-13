@@ -27,7 +27,12 @@ public class InstantiateOnTimer : MonoBehaviour
         enabled = true;
     }
 
-    void Update () 
+	private void OnBecameInvisible()
+	{
+		enabled = false;
+	}
+
+	void Update () 
 	{
 		// wait for the time to expire
 		if (timer > 0)
