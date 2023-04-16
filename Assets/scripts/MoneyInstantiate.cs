@@ -8,6 +8,7 @@ public class MoneyInstantiate : MonoBehaviour
     public Transform instantiate;   // causes what to be created?
     public float delayTime;         // what is the minimum time?
     public GameObject player;
+    public GameObject moneyHandler;
     public int cost;
 
     private float moneyAmount;
@@ -16,7 +17,7 @@ public class MoneyInstantiate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyAmount = player.GetComponentInChildren<Money_Collect>().MoneyNum;
+        moneyAmount = moneyHandler.GetComponentInChildren<Money_count>().MoneyNum;
         // if there's a delay between keypresses imposed, let the time run down
         if (timer > 0)
         {
@@ -28,7 +29,7 @@ public class MoneyInstantiate : MonoBehaviour
         if (Input.GetKeyDown(key) && moneyAmount > 0)
         {
             Instantiate(instantiate, transform.position, transform.rotation);
-            player.GetComponentInChildren<Money_Collect>().UseMoney(cost);
+            player.GetComponentInChildren<Money_Collect>().UseMoney(-cost);
             timer = delayTime;
         }
     }
