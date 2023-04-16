@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Money_Collect : MonoBehaviour
 {
-    public float MoneyNum = 0f;
+    public GameObject Money;
 
-    public void PickupMoney(int amount)
+    public void PickupMoney(float amount)
     {
-        MoneyNum += amount;
+        Money.GetComponentInChildren<Money_count>().GainMoney(amount);
     }
 
-    public void UseMoney(int amount)
+    public void UseMoney(float amount)
     {
-        MoneyNum -= amount;
+        Money.GetComponentInChildren<Money_count>().GainMoney(amount);
     }
 }

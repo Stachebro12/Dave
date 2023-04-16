@@ -14,16 +14,16 @@ public class MainMenu : MonoBehaviour
     public void Alien1()
     {
         //ButtonSound.Play();
-        SceneManager.LoadScene("Alien 1 day 1");
+        SceneManager.LoadScene("french");
     }
     public void Alien2()
     {
         //ButtonSound.Play();
-        SceneManager.LoadScene("Alien 2 day 1");
+        SceneManager.LoadScene("queen");
     }
     public void Alien3()
     {
         //ButtonSound.Play();
-        SceneManager.LoadScene("Alien 3 day 1");
+        SceneManager.LoadScene("empathetic");
     }
 }

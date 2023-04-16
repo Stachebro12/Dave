@@ -7,13 +7,16 @@ public class Money_count : MonoBehaviour
 {
     public Text Money;
 
+    public float MoneyNum = 0f;
+
     public GameObject Player;
 
-    // Update is called once per frame
+    public void GainMoney(float difference)
+    {
+        MoneyNum += difference;
+    }
     void Update()
     {
-        float money = Player.GetComponent<Money_Collect>().MoneyNum;
-
-        Money.text = "Money: $" + money;
+        Money.text = "Money: $" + MoneyNum;
     }
 }
