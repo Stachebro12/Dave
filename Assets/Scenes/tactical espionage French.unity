@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 414051568}
   - component: {fileID: 414051570}
   - component: {fileID: 414051569}
+  - component: {fileID: 414051571}
   m_Layer: 5
   m_Name: Day
   m_TagString: Untagged
@@ -668,6 +669,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414051567}
   m_CullTransparentMesh: 1
+--- !u!114 &414051571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414051567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7075942000506744bbc5ed712ffc5a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: 1
+  DayText: {fileID: 414051569}
 --- !u!1 &472541959
 GameObject:
   m_ObjectHideFlags: 0
