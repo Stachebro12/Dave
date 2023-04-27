@@ -41,19 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8876639809849150403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f313bdb36fff7044a8356f609390706, type: 3}
+  m_Script: {fileID: 11500000, guid: d86b64003bc7c054d8d835564eeb2f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  pauseTime: 0.02
+  pauseTime: 0.025
   dialogue:
-    dave: 
-    sentences: []
-    instructions: []
-    daves: []
-  textBox: {fileID: 898664902158892787, guid: be0101729c6ad6b4690e581b13747b2d, type: 3}
-  portrait: {fileID: 6202988611233518500, guid: 185715f8c71f80a4085f78662362cd87, type: 3}
-  choicePanel: {fileID: 8404671632712765633, guid: 1ebf8c8584c742e4f993e1c790df2359, type: 3}
-  importantButton: {fileID: 2138174179478653801, guid: 57d788a36f27e4345ba51434fe385ccd, type: 3}
-  alien: 1
-  backToMenu: 1
+    dave: Royal Dave
+    sentences:
+    - Blimey. A commoner!
+    - Having a cup of tea, are we?
+  textBox: {fileID: 898664902158892787, guid: 774b7f4ea7c9f2d4d9dcfa8101e30fe5, type: 3}
+  portrait: {fileID: 3135040105192680276, guid: 89e6c1febe47d9245a656598b1e01ff0, type: 3}
