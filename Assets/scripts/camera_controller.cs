@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class camera_controller : MonoBehaviour
 {
-    private Rigidbody2D rigidBody;
-
-    public GameObject player;
-    void Start()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-    }
+    public Transform player;
 
     void Update()
     {
-        if (player.transform.position.y - transform.position.y > 5)
+        if (player.position.y - transform.position.y > 5)
         {
-                rigidBody.MovePosition(transform.position + new Vector3(0, 10, 0));
+            transform.Translate(0, 10, 0);
         }
-        if (player.transform.position.y - transform.position.y < -5)
+        if (player.position.y - transform.position.y < -5)
         {
-                rigidBody.MovePosition(transform.position + new Vector3(0, -10, 0));
+            transform.Translate(0, -10, 0);
         }
-        if (player.transform.position.x - transform.position.x > 17.8 / 2)
+        if (player.position.x - transform.position.x > 17.8 / 2)
         {
-                rigidBody.MovePosition(transform.position + new Vector3((float)1920 / 108, 0, 0));
+            transform.Translate((float)1920 / 108, 0, 0);
         }
-        if (player.transform.position.x - transform.position.x < -17.8 / 2)
+        if (player.position.x - transform.position.x < -17.8 / 2)
         {
-                rigidBody.MovePosition(transform.position + new Vector3((float)-1920 / 108, 0, 0));
+            transform.Translate((float)-1920 / 108, 0, 0);
         }
     }
 }
