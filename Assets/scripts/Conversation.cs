@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager prefab.
     public bool autoStart; //Check this checkbox if you want the dialogue to start when the scene is loaded.
@@ -13,6 +14,8 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
     public GameObject textBox; //The Textbox object. Put this prefab into the field in the inspector. It is instantiated at runtime.
     public GameObject portrait; //The character portrait. Right now, changing to different character portraits is not possible.
     private TMP_Text content; //The textbox that is modified through script.
+    public int alien; //Right now we'll set this in the inspector. This will determine what scene we load when the alien is caught.
+    public bool backToMenu = true; //This will return you to the menu if set to true.
 
     void Awake() {
         canvas = GameObject.Find("Canvas"); //Finds the canvas in the scene, before anything else.
@@ -46,7 +49,7 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
 
     private void NextLine() {
         if (lines.Count == 0) {
-            EndDialogue();
+            EndDialogue(alien, backToMenu);
             return;
         }
         string line = lines.Dequeue(); //The Dequeue function will remove the next item from the queue and return it's value.
@@ -55,8 +58,19 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
         StartCoroutine(TypeSentence(line)); //Types the sentence gradually.
     }
 
-    private void EndDialogue() {
-        Debug.Log("End of conversation."); //Ends the dialogue. Doesn't do anything right now, but does prevent the game from throwing an error.
+    private void EndDialogue(int alienNum, bool doLoad) {
+        if (alienNum == 1)
+        {
+            SceneManager.LoadScene("french");
+        }
+        else if (alienNum == 2)
+        {
+            SceneManager.LoadScene("queen");
+        }
+        else if (alienNum == 3)
+        {
+            SceneManager.LoadScene("empathetic");
+        }
     }
 
     IEnumerator TypeSentence(string sentece) {

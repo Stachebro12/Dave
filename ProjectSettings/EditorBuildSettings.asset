@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/empathetic.unity
     guid: 66520d75b8c8fe6449e896d4cc9a6a7a
+  - enabled: 1
+    path: Assets/Scenes/french date 1.unity
+    guid: 285690b0b332b834a8814883f8c002d3
   m_configObjects: {}
