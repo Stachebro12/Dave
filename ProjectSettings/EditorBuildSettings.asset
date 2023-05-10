@@ -13,13 +13,22 @@ EditorBuildSettings:
     guid: e694f3da9974579419b08e9f7ea2f5cb
   - enabled: 1
     path: Assets/Scenes/french.unity
-    guid: aab7ef67eac1a7346940d8f05b951099
+    guid: 6f0d9bd50f0598149b8daccfa7e1b345
+  - enabled: 1
+    path: Assets/Scenes/french_Main.unity
+    guid: f0dc97fe8d68ed54ba012f45351bdda9
   - enabled: 1
     path: Assets/Scenes/queen.unity
     guid: f9696f99911bcff42ad0a000c7c80ed0
   - enabled: 1
+    path: Assets/Scenes/queen_Main.unity
+    guid: 4ce890a6ec41bc149a4baec89b998aeb
+  - enabled: 1
     path: Assets/Scenes/empathetic.unity
     guid: 66520d75b8c8fe6449e896d4cc9a6a7a
+  - enabled: 1
+    path: Assets/Scenes/empathetic_Main.unity
+    guid: c944ce04e9a0e304cbf0dbe026cd2045
   - enabled: 1
     path: Assets/Scenes/french date 1.unity
     guid: 285690b0b332b834a8814883f8c002d3

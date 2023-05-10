@@ -18,7 +18,7 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
     public bool backToMenu = true; //This will return you to the menu if set to true.
 
     void Awake() {
-        canvas = GameObject.Find("Canvas"); //Finds the canvas in the scene, before anything else.
+        canvas = GameObject.Find("HUD"); //Finds the canvas in the scene, before anything else.
     }
 
     void Start() {
@@ -59,9 +59,12 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
     }
 
     private void EndDialogue(int alienNum, bool doLoad) {
+        Destroy(content.gameObject.transform.parent.gameObject);
+        canvas.transform.Find("Panel").gameObject.SetActive(true);
+        canvas.GetComponent<MainMenu>().ExtractNum();
         if (alienNum == 1)
         {
-            SceneManager.LoadScene("french");
+            SceneManager.LoadScene("french_Main");
         }
         else if (alienNum == 2)
         {

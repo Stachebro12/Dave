@@ -5,138 +5,51 @@ public class MainMenu : MonoBehaviour
 {
     public AudioSource ButtonSound;
     public int date;
-    public GameObject stats;
+    public bool isMain; //Set this to true if this object is on the main menu. Otherwise, it will look for a dateNum variable where there isn't one.
+                        //It won't destroy the game, but it will throw an annoying error.
 
-    public void Update()
-    {
-        date = stats.GetComponentInChildren<Stats>().dateNum;
+    public void Awake() {
+        if (!isMain) {
+            ExtractNum();
+        }
     }
-    public void Menu()
-    {
+
+    public void ExtractNum() {
+        date = GetComponent<Stats>().dateNum; //We want to make sure to do this only when we need to, not every frame.
+    }
+
+    public void Menu() {
         //ButtonSound.Play();
         SceneManager.LoadScene("Main Menu");
     }
 
-    public void Alien1()
-    {
+    public void VisitAlien(string alien) {
         //ButtonSound.Play();
-        SceneManager.LoadScene("french");
+        SceneManager.LoadScene(alien); //Using string values, we can load the alien scene with one instruction, rather than an if branch.
     }
-    public void Alien2()
-    {
+    
+    public void DoDate() {
         //ButtonSound.Play();
-        SceneManager.LoadScene("queen");
-    }
-    public void Alien3()
-    {
-        //ButtonSound.Play();
-        SceneManager.LoadScene("empathetic");
-    }
-
-    public void Date1()
-    {
-        //ButtonSound.Play();
-        if(date == 0)
-        {
-            SceneManager.LoadScene("french date 1");
-        } else if (date == 1)
-        {
-            SceneManager.LoadScene("french date 2");
-        } else if (date == 2)
-        {
-            SceneManager.LoadScene("french date 3");
-        } else if (date == 3)
-        {
-            SceneManager.LoadScene("french date 4");
-        } else if (date == 4)
-        {
-            SceneManager.LoadScene("french date 5");
-        } else if (date == 5)
-        {
-            SceneManager.LoadScene("french date 6");
-        } else if (date == 6)
-        {
-            SceneManager.LoadScene("french date 7");
-        }
-    }
-    public void Date2()
-    {
-        //ButtonSound.Play();
-        if (date == 0)
-        {
-            SceneManager.LoadScene("queen date 1");
-        }
-        else if (date == 1)
-        {
-            SceneManager.LoadScene("queen date 2");
-        }
-        else if (date == 2)
-        {
-            SceneManager.LoadScene("queen date 3");
-        }
-        else if (date == 3)
-        {
-            SceneManager.LoadScene("queen date 4");
-        }
-        else if (date == 4)
-        {
-            SceneManager.LoadScene("queen date 5");
-        }
-        else if (date == 5)
-        {
-            SceneManager.LoadScene("queen date 6");
-        }
-        else if (date == 6)
-        {
-            SceneManager.LoadScene("queen date 7");
-        }
-    }
-    public void Date3()
-    {
-        //ButtonSound.Play();
-        if (date == 0)
-        {
-            SceneManager.LoadScene("empathetic date 1");
-        }
-        else if (date == 1)
-        {
-            SceneManager.LoadScene("empathetic date 2");
-        }
-        else if (date == 2)
-        {
-            SceneManager.LoadScene("empathetic date 3");
-        }
-        else if (date == 3)
-        {
-            SceneManager.LoadScene("empathetic date 4");
-        }
-        else if (date == 4)
-        {
-            SceneManager.LoadScene("empathetic date 5");
-        }
-        else if (date == 5)
-        {
-            SceneManager.LoadScene("empathetic date 6");
-        }
-        else if (date == 6)
-        {
-            SceneManager.LoadScene("empathetic date 7");
-        }
+        transform.Find("Panel").gameObject.SetActive(false); //We want to disable the alien menu when we enter the date.
+        SceneManager.LoadScene(date);
     }
     public void Escape1()
     {
         //ButtonSound.Play();
         SceneManager.LoadScene("tactical espionage French");
+        transform.Find("Panel").gameObject.SetActive(false);
     }
     public void Escape2()
     {
         //ButtonSound.Play();
         SceneManager.LoadScene("tactical espionage Queen");
+        transform.Find("Panel").gameObject.SetActive(false);
     }
     public void Escape3()
     {
         //ButtonSound.Play();
         SceneManager.LoadScene("tactical espionage Empathetic");
+        transform.Find("Panel").gameObject.SetActive(false);
     }
 
 }

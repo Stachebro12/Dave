@@ -901,14 +901,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634728025}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Alien3
-        m_Mode: 1
+        m_MethodName: VisitAlien
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: empathetic
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &986346267
@@ -1035,14 +1035,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634728025}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Alien2
-        m_Mode: 1
+        m_MethodName: VisitAlien
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: queen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1316674117
@@ -1116,6 +1116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonSound: {fileID: 0}
+  date: 0
+  isMain: 1
 --- !u!114 &1634728026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,14 +1289,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1634728025}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Alien1
-        m_Mode: 1
+        m_MethodName: VisitAlien
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: french
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2121915502
