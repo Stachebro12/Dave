@@ -25,6 +25,7 @@ public class sight : MonoBehaviour
                 {
                 canvas.transform.Find("Panel").gameObject.SetActive(true);
                 canvas.GetComponent<MainMenu>().ExtractNum();
+                canvas.GetComponentInChildren<DayCounter>().timePassing();
                 if (alienNum == 1)
                 { 
                     SceneManager.LoadScene("french_main");

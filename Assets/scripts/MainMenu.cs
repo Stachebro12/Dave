@@ -31,7 +31,10 @@ public class MainMenu : MonoBehaviour
     public void DoDate() {
         //ButtonSound.Play();
         transform.Find("Panel").gameObject.SetActive(false); //We want to disable the alien menu when we enter the date.
-        SceneManager.LoadScene(date);
+        if (date < 7)
+        {
+            SceneManager.LoadScene(date);
+        }
     }
     public void Escape1()
     {

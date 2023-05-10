@@ -62,17 +62,19 @@ public class Conversation : MonoBehaviour { //Use this with the Dialogue Manager
         Destroy(content.gameObject.transform.parent.gameObject);
         canvas.transform.Find("Panel").gameObject.SetActive(true);
         canvas.GetComponent<MainMenu>().ExtractNum();
+        canvas.GetComponentInChildren<Stats>().dateUp();
+        canvas.GetComponentInChildren<DayCounter>().timePassing();
         if (alienNum == 1)
         {
             SceneManager.LoadScene("french_Main");
         }
         else if (alienNum == 2)
         {
-            SceneManager.LoadScene("queen");
+            SceneManager.LoadScene("queen_Main");
         }
         else if (alienNum == 3)
         {
-            SceneManager.LoadScene("empathetic");
+            SceneManager.LoadScene("empathetic_Main");
         }
     }
 

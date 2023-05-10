@@ -1168,7 +1168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816b17c61705ebf45b17da1bbf1a07a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: {fileID: 0}
 --- !u!1001 &1351879524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1274,8 +1273,25 @@ MonoBehaviour:
   instantiate: {fileID: 4548553071795274045, guid: b6785cc0e13d0144cb2a6330e33ee094, type: 3}
   delayTime: 0
   player: {fileID: 1316475961}
-  moneyHandler: {fileID: 0}
   cost: 1
+--- !u!1 &1390276584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6872435053752913347, guid: 66e01c3a628e7ef469709bdbf7bb5540, type: 3}
+  m_PrefabInstance: {fileID: 6872435055628489404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390276585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390276584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ac5c4fecd593948abd9aa240aa1355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienNum: 1
 --- !u!1 &1465451849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1619,6 @@ MonoBehaviour:
   key: 122
   instantiate: {fileID: 6047304423852703086, guid: a19237113854f8b42848377eac69386e, type: 3}
   delayTime: 0
-  pp: {fileID: 0}
   cost: 1
 --- !u!1001 &1950538133
 PrefabInstance:
@@ -1894,6 +1909,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6872435053752913212, guid: 66e01c3a628e7ef469709bdbf7bb5540, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6872435054515165166, guid: 66e01c3a628e7ef469709bdbf7bb5540, type: 3}
       propertyPath: m_RootOrder
       value: 17
