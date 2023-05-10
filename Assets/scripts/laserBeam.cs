@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class kill : MonoBehaviour
+public class laserBeam : MonoBehaviour
 {
     private GameObject canvas;
     private GameObject player;
@@ -16,7 +16,7 @@ public class kill : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject);
         if (collision.gameObject == player)
