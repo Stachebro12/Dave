@@ -14,11 +14,19 @@ public class playerController : MonoBehaviour
     public float distD;
 
     private Rigidbody2D rigidBody;
+    private Transform Spawn;
+    private GameObject Stats;
 
     // Start is called before the first frame update
     void Start()
     {
+        Stats = GameObject.Find("Stats");
+        Spawn = Stats.GetComponent<Stats>().Spawn;
         rigidBody = GetComponent<Rigidbody2D> ();
+        if(Spawn != null)
+        {
+            transform.position = Spawn.position;
+        }
     }
 
     // Update is called once per frame

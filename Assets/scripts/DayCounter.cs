@@ -9,6 +9,8 @@ public class DayCounter : MonoBehaviour
 {
     public int day = 1;
     public Text DayText;
+    public GameObject shop;
+    public GameObject gift;
 
     public void timePassing()
     {
@@ -71,6 +73,16 @@ public class DayCounter : MonoBehaviour
         else if (day == 14)
         {
             DayText.text = "Night 7";
+        }
+        if (day % 2 == 0)
+        {
+            gift.SetActive(true);
+            shop.SetActive(false);
+        }
+        else
+        {
+            gift.SetActive(false);
+            shop.SetActive(true);
         }
     }
 }
