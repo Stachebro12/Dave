@@ -1516,8 +1516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 1
   DayText: {fileID: 1535699111}
-  shop: {fileID: 0}
-  gift: {fileID: 0}
+  shop: {fileID: 41730511}
+  gift: {fileID: 1242388795}
 --- !u!114 &1535699111
 MonoBehaviour:
   m_ObjectHideFlags: 0
