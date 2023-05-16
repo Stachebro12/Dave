@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour {
     public int dateNum;
-    public Transform Spawn;
+    public int SpawnX;
+    public int SpawnY;
     public bool checkpoint1 = false;
     public bool checkpoint2 = false;
     public bool checkpoint3 = false;
@@ -25,9 +26,10 @@ public class Stats : MonoBehaviour {
         dateNum += 1;
     }
 
-    public void NewSpawnPoint(Transform SpawnPoint)
+    public void NewSpawnPoint(int SpawnPointX, int SpawnPointY)
     {
-        Spawn = SpawnPoint;
+        SpawnX = SpawnPointX;
+        SpawnY = SpawnPointY;
     }
 
     public void check1()
