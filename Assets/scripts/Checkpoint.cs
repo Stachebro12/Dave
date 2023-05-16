@@ -5,8 +5,9 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private GameObject stats;
-    public Transform Spawn;
     public int CheckpointNum;
+    public int spawnX;
+    public int spawnY;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Checkpoint : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        stats.GetComponent<Stats>().NewSpawnPoint(Spawn);
+        stats.GetComponent<Stats>().NewSpawnPoint(spawnX, spawnY);
         if(CheckpointNum == 1)
         {
             stats.GetComponent<Stats>().check1();
