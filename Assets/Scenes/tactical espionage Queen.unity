@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2888227115285360223, guid: d924f112e3e4321429ccdae102e9e766, type: 3}
+      propertyPath: instantiate
+      value: 
+      objectReference: {fileID: 6043276209035286126, guid: dfc8ac57a5645624a8b27864e880d09a, type: 3}
     - target: {fileID: 2888227115483084352, guid: d924f112e3e4321429ccdae102e9e766, type: 3}
       propertyPath: m_Name
       value: RoTurret
@@ -953,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9070042cb63bf42904057fcf8b728a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienNum: 1
+  alienNum: 3
 --- !u!212 &948718781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1425,7 +1429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1381588828
 Transform:
   m_ObjectHideFlags: 0
@@ -1475,7 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ac5c4fecd593948abd9aa240aa1355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienNum: 1
+  alienNum: 3
 --- !u!1 &1465451849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1825079378
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,6 +2224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6249102286719019929, guid: 79a35fc780381894b99c83cdcc7b89de, type: 3}
+      propertyPath: instantiate
+      value: 
+      objectReference: {fileID: 6043276209035286126, guid: dfc8ac57a5645624a8b27864e880d09a, type: 3}
     - target: {fileID: 6249102286917661570, guid: 79a35fc780381894b99c83cdcc7b89de, type: 3}
       propertyPath: m_RootOrder
       value: 12
