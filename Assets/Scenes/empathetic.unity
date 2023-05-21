@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateNum: 6
+  dateNum: 27
   SpawnX: 0
   SpawnY: 0
   checkpoint1: 0
@@ -1177,6 +1177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PPText: {fileID: 1554986907}
   ppNum: 10
+  ppMax: 10
 --- !u!114 &1554986907
 MonoBehaviour:
   m_ObjectHideFlags: 0

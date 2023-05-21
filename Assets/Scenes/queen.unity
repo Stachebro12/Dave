@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 551969966}
   - component: {fileID: 551969965}
   m_Layer: 5
-  m_Name: HUD (1)
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateNum: 6
+  dateNum: 15
   SpawnX: 0
   SpawnY: 0
   checkpoint1: 0
@@ -1421,6 +1421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PPText: {fileID: 1466787111}
   ppNum: 10
+  ppMax: 10
 --- !u!114 &1466787111
 MonoBehaviour:
   m_ObjectHideFlags: 0

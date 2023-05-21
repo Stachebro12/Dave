@@ -17,15 +17,18 @@ public class playerController : MonoBehaviour
     private int SpawnX;
     private int SpawnY;
     private GameObject Stats;
+    private GameObject pp;
 
     // Start is called before the first frame update
     void Start()
     {
+        pp = GameObject.Find("PP");
         Stats = GameObject.Find("Stats");
         SpawnX = Stats.GetComponent<Stats>().SpawnX;
         SpawnY = Stats.GetComponent<Stats>().SpawnY;
         rigidBody = GetComponent<Rigidbody2D> ();
         rigidBody.MovePosition(new Vector3(SpawnX, SpawnY, 0));
+        pp.GetComponent<PP>().RestorePP();
     }
 
     // Update is called once per frame

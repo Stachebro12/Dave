@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonSound: {fileID: 0}
-  alienNum: 1
+  alienNum: 3
 --- !u!114 &7532710
 MonoBehaviour:
   m_ObjectHideFlags: 0

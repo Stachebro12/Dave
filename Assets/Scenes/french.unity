@@ -376,7 +376,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateNum: 6
+  dateNum: 4
+  SpawnX: 0
+  SpawnY: 0
+  checkpoint1: 0
+  checkpoint2: 0
+  checkpoint3: 0
+  checkpoint4: 0
+  checkpoint5: 0
+  checkpoint6: 0
+  checkpoint7: 0
+  checkpoint8: 0
+  checkpoint9: 0
+  checkpoint10: 0
+  TEWon: 0
 --- !u!114 &90156438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonSound: {fileID: 0}
-  date: 0
+  date: 3
   isMain: 0
 --- !u!1 &174692816
 GameObject:
@@ -1545,6 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PPText: {fileID: 1365846984}
   ppNum: 10
+  ppMax: 10
 --- !u!114 &1365846984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1786,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dateNum: 1
+  SpawnX: 0
+  SpawnY: 0
+  checkpoint1: 0
+  checkpoint2: 0
+  checkpoint3: 0
+  checkpoint4: 0
+  checkpoint5: 0
+  checkpoint6: 0
+  checkpoint7: 0
+  checkpoint8: 0
+  checkpoint9: 0
+  checkpoint10: 0
+  TEWon: 0
 --- !u!1 &1508116971
 GameObject:
   m_ObjectHideFlags: 0
