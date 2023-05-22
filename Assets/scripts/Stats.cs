@@ -6,6 +6,7 @@ public class Stats : MonoBehaviour {
     public int dateNum;
     public int SpawnX;
     public int SpawnY;
+    public int alienNum;
     public bool checkpoint1 = false;
     public bool checkpoint2 = false;
     public bool checkpoint3 = false;
