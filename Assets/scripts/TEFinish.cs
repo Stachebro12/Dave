@@ -5,19 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class TEFinish : MonoBehaviour
 {
-    private GameObject stats;
     private GameObject canvas;
-    public int alienNum;
+    private int alienNum;
     // Start is called before the first frame update
     void Start()
     {
-        stats = GameObject.Find("Stats");
         canvas = GameObject.Find("HUD");
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        stats.GetComponent<Stats>().TEWin();
+        alienNum = canvas.GetComponent<Stats>().alienNum;
+        canvas.GetComponent<Stats>().TEWin();
         canvas.transform.Find("Panel").gameObject.SetActive(true);
         canvas.GetComponent<MainMenu>().ExtractNum();
         canvas.GetComponentInChildren<DayCounter>().timePassing();

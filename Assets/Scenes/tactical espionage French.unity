@@ -8537,7 +8537,7 @@ Transform:
   - {fileID: 611825770}
   - {fileID: 1304587891531733926}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882596329
 GameObject:
@@ -9393,7 +9393,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955681752
 GameObject:
@@ -13053,7 +13053,7 @@ Transform:
   - {fileID: 1381588828}
   - {fileID: 1465451850}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1316475966
 BoxCollider2D:
@@ -19367,7 +19367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791b648d4908f8c4cb7568628259c6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienNum: 0
+  alienNum: 1
 --- !u!1001 &4043675405922153719
 PrefabInstance:
   m_ObjectHideFlags: 0

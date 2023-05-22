@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class sight : MonoBehaviour
 {
-    public int alienNum;
+    private int alienNum;
     private GameObject canvas;
 
     private void Awake()
@@ -23,6 +23,7 @@ public class sight : MonoBehaviour
             Transform target = hit.transform;
                 if (target.name == "Player")
                 {
+                alienNum = canvas.GetComponent<Stats>().alienNum;
                 canvas.transform.Find("Panel").gameObject.SetActive(true);
                 canvas.GetComponent<MainMenu>().ExtractNum();
                 canvas.GetComponentInChildren<DayCounter>().timePassing();

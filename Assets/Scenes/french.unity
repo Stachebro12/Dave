@@ -354,7 +354,6 @@ RectTransform:
   - {fileID: 1365846982}
   - {fileID: 690102365}
   - {fileID: 174692817}
-  - {fileID: 1460893606}
   - {fileID: 1268059237}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -379,6 +378,7 @@ MonoBehaviour:
   dateNum: 4
   SpawnX: 0
   SpawnY: 0
+  alienNum: 1
   checkpoint1: 0
   checkpoint2: 0
   checkpoint3: 0
@@ -1325,7 +1325,7 @@ RectTransform:
   - {fileID: 780572545}
   - {fileID: 660381352}
   m_Father: {fileID: 90156436}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1736,69 +1736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405643979}
   m_CullTransparentMesh: 1
---- !u!1 &1460893605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1460893606}
-  - component: {fileID: 1460893607}
-  m_Layer: 5
-  m_Name: Stats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1460893606
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460893605}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 90156436}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: -540}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1460893607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460893605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dateNum: 1
-  SpawnX: 0
-  SpawnY: 0
-  checkpoint1: 0
-  checkpoint2: 0
-  checkpoint3: 0
-  checkpoint4: 0
-  checkpoint5: 0
-  checkpoint6: 0
-  checkpoint7: 0
-  checkpoint8: 0
-  checkpoint9: 0
-  checkpoint10: 0
-  TEWon: 0
 --- !u!1 &1508116971
 GameObject:
   m_ObjectHideFlags: 0

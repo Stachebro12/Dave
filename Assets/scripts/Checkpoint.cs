@@ -11,7 +11,7 @@ public class Checkpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stats = GameObject.Find("Stats");
+        stats = GameObject.Find("HUD");
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

@@ -7,7 +7,7 @@ public class kill : MonoBehaviour
 {
     private GameObject canvas;
     private GameObject player;
-    public int alienNum;
+    private int alienNum;
 
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class kill : MonoBehaviour
         Debug.Log(collision.gameObject);
         if (collision.gameObject == player)
         {
+            alienNum = canvas.GetComponent<Stats>().alienNum;
             canvas.transform.Find("Panel").gameObject.SetActive(true);
             canvas.GetComponent<MainMenu>().ExtractNum();
             canvas.GetComponentInChildren<DayCounter>().timePassing();

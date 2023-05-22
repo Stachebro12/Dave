@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ExtractNum() {
-        date = GetComponent<Stats>().dateNum; //We want to make sure to do this only when we need to, not every frame.
+        date = GetComponentInChildren<Stats>().dateNum; //We want to make sure to do this only when we need to, not every frame.
     }
 
     public void Menu() {

@@ -290,9 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateNum: 15
+  dateNum: 16
   SpawnX: 0
   SpawnY: 0
+  alienNum: 2
   checkpoint1: 0
   checkpoint2: 0
   checkpoint3: 0
@@ -395,7 +396,6 @@ RectTransform:
   - {fileID: 1466787109}
   - {fileID: 1726716218}
   - {fileID: 1535699109}
-  - {fileID: 1732690050}
   - {fileID: 1322254088}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1188,7 +1188,7 @@ RectTransform:
   - {fileID: 41730512}
   - {fileID: 1242388796}
   m_Father: {fileID: 551969970}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1737,69 +1737,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726716217}
   m_CullTransparentMesh: 1
---- !u!1 &1732690049
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1732690050}
-  - component: {fileID: 1732690051}
-  m_Layer: 5
-  m_Name: Stats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1732690050
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732690049}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 551969970}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: -540}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1732690051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732690049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dateNum: 0
-  SpawnX: 0
-  SpawnY: 0
-  checkpoint1: 0
-  checkpoint2: 0
-  checkpoint3: 0
-  checkpoint4: 0
-  checkpoint5: 0
-  checkpoint6: 0
-  checkpoint7: 0
-  checkpoint8: 0
-  checkpoint9: 0
-  checkpoint10: 0
-  TEWon: 0
 --- !u!1 &1818711426
 GameObject:
   m_ObjectHideFlags: 0
