@@ -8,7 +8,7 @@ public class TEFinish : MonoBehaviour
     private GameObject canvas;
     private int alienNum;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         canvas = GameObject.Find("HUD");
     }

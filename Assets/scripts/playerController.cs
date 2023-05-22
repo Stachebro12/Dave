@@ -23,7 +23,7 @@ public class playerController : MonoBehaviour
     void Start()
     {
         pp = GameObject.Find("PP");
-        Stats = GameObject.Find("Stats");
+        Stats = GameObject.Find("HUD");
         SpawnX = Stats.GetComponent<Stats>().SpawnX;
         SpawnY = Stats.GetComponent<Stats>().SpawnY;
         rigidBody = GetComponent<Rigidbody2D> ();

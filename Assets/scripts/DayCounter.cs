@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -11,6 +12,17 @@ public class DayCounter : MonoBehaviour
     public Text DayText;
     public GameObject shop;
     public GameObject gift;
+    public float PPRequirement;
+
+    private GameObject canvas;
+    private float PP;
+    private bool TE;
+    private int alienNum;
+
+    void Start()
+    {
+        canvas = GameObject.Find("HUD");
+    }
 
     public void timePassing()
     {
@@ -18,6 +30,9 @@ public class DayCounter : MonoBehaviour
     }
     void Update()
     {
+        PP = canvas.GetComponentInChildren<PP>().ppMax;
+        TE = canvas.GetComponent<Stats>().TEWon;
+        alienNum = canvas.GetComponent<Stats>().alienNum;
         if (day == 1)
         {
             DayText.text = "Day 1";
@@ -73,6 +88,51 @@ public class DayCounter : MonoBehaviour
         else if (day == 14)
         {
             DayText.text = "Night 7";
+        }
+        else if (TE == false)
+        {
+            if (alienNum == 1)
+            {
+                SceneManager.LoadScene("french trapped");
+            }
+            else if (alienNum == 2)
+            {
+                SceneManager.LoadScene("queen trapped");
+            }
+            else if (alienNum == 3)
+            {
+                SceneManager.LoadScene("empathetic trapped");
+            }
+        }
+        else if (PP < PPRequirement)
+        {
+            if (alienNum == 1)
+            {
+                SceneManager.LoadScene("french flee");
+            }
+            else if (alienNum == 2)
+            {
+                SceneManager.LoadScene("queen flee");
+            }
+            else if (alienNum == 3)
+            {
+                SceneManager.LoadScene("empathetic flee");
+            }
+        }
+        else
+        {
+            if (alienNum == 1)
+            {
+                SceneManager.LoadScene("french win");
+            }
+            else if (alienNum == 2)
+            {
+                SceneManager.LoadScene("queen win");
+            }
+            else if (alienNum == 3)
+            {
+                SceneManager.LoadScene("empathetic win");
+            }
         }
         if (day % 2 == 0)
         {

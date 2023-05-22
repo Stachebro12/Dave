@@ -48,8 +48,8 @@ MonoBehaviour:
   instantiate: {fileID: 6043276209035286126, guid: a92df3eaa32372043a42a90ad42b9798, type: 3}
   delayMin: 1
   delayMax: 1
-  repeatMin: 0.2
-  repeatMax: 0.2
+  repeatMin: 1
+  repeatMax: 1
 --- !u!212 &6249102286719019926
 SpriteRenderer:
   m_ObjectHideFlags: 0

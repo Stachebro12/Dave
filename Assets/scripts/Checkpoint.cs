@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
     public int spawnX;
     public int spawnY;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         stats = GameObject.Find("HUD");
     }
