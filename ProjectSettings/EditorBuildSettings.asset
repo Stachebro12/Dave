@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/french date 3.unity
     guid: f0149511b5b85114f9afb3411009ddee
   - enabled: 1
+    path: Assets/Scenes/french date 4.unity
+    guid: ffe91119338b8ce4aa3f5ad5425ee89b
+  - enabled: 1
     path: Assets/Scenes/french date 5.unity
     guid: 8d5fd5ef5d3436448ae02d69bd08b583
   - enabled: 1
@@ -138,36 +141,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Empathetic flee.unity
     guid: 934475d48b926094789569903a32d029
   - enabled: 1
-    path: Assets/Scenes/Empathetic lose.unity
+    path: Assets/Scenes/empathetic lose.unity
     guid: c0db25a3e09c16941981eae4bc1485cf
   - enabled: 1
-    path: Assets/Scenes/Empathetic trapped.unity
+    path: Assets/Scenes/empathetic trapped.unity
     guid: 3ede6652446203a479442b6d6e3f1993
   - enabled: 1
-    path: Assets/Scenes/Empathetic win.unity
+    path: Assets/Scenes/empathetic win.unity
     guid: fb4f2b84a038f66479f346c0f4069583
   - enabled: 1
-    path: Assets/Scenes/French flee.unity
+    path: Assets/Scenes/french flee.unity
     guid: 997191faac6f2e44fa011f361f5018f5
   - enabled: 1
-    path: Assets/Scenes/French lose.unity
+    path: Assets/Scenes/french lose.unity
     guid: 74590c55c885c814fa046d0baf03161d
   - enabled: 1
-    path: Assets/Scenes/French trapped.unity
+    path: Assets/Scenes/french trapped.unity
     guid: d5d685afdefe8394db69e42de7fdbe67
   - enabled: 1
-    path: Assets/Scenes/French win.unity
+    path: Assets/Scenes/french win.unity
     guid: cf2d9f6a4e97ba14c9ef4d1f2b660127
   - enabled: 1
-    path: Assets/Scenes/Queen flee.unity
+    path: Assets/Scenes/queen flee.unity
     guid: c6b086bdfdc2e0a4a8eda6998cb6f53d
   - enabled: 1
-    path: Assets/Scenes/Queen lose.unity
+    path: Assets/Scenes/queen lose.unity
     guid: 58f1a9a2a47a8d24984f3561a5a81a65
   - enabled: 1
-    path: Assets/Scenes/Queen trapped.unity
+    path: Assets/Scenes/queen trapped.unity
     guid: d0ab5f0d6230b204b89c1074a932f27f
   - enabled: 1
-    path: Assets/Scenes/Queen win.unity
+    path: Assets/Scenes/queen win.unity
     guid: 6a256fbe26178f44696aabcd4f422deb
   m_configObjects: {}

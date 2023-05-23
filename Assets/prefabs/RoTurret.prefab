@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2888227115285360221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.25, z: 0.0001}
+  m_LocalPosition: {x: 0, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,8 +48,8 @@ MonoBehaviour:
   instantiate: {fileID: 6043276209035286126, guid: a92df3eaa32372043a42a90ad42b9798, type: 3}
   delayMin: 1
   delayMax: 1
-  repeatMin: 0.2
-  repeatMax: 0.2
+  repeatMin: 0.5
+  repeatMax: 0.5
 --- !u!212 &2888227115285360208
 SpriteRenderer:
   m_ObjectHideFlags: 0

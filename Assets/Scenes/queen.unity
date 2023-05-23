@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65752c68b06b984bb5751bc7d2947ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateNum: 16
+  dateNum: 17
   SpawnX: 0
   SpawnY: 0
   alienNum: 2
@@ -1519,6 +1519,7 @@ MonoBehaviour:
   DayText: {fileID: 1535699111}
   shop: {fileID: 41730511}
   gift: {fileID: 1242388795}
+  PPRequirement: 0
 --- !u!114 &1535699111
 MonoBehaviour:
   m_ObjectHideFlags: 0

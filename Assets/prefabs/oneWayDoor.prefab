@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1523699031954619636}
   - component: {fileID: 1523699031954619637}
   - component: {fileID: 2372337324228179289}
-  m_Layer: 16
+  m_Layer: 9
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523699032353606906}
   - component: {fileID: 1523699032353606905}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: oneWayDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
