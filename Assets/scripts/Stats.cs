@@ -19,6 +19,8 @@ public class Stats : MonoBehaviour {
     public bool checkpoint10 = false;
     public bool TEWon = false;
 
+    private GameObject gift;
+
     void Start() {
         DontDestroyOnLoad(this.gameObject); //This is necessary to ensure the HUD carries between scenes.
     }
