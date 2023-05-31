@@ -18,6 +18,7 @@ public class Stats : MonoBehaviour {
     public bool checkpoint9 = false;
     public bool checkpoint10 = false;
     public bool TEWon = false;
+    public int FTEDictionary = 0;
 
     private GameObject gift;
 
@@ -78,5 +79,9 @@ public class Stats : MonoBehaviour {
     public void TEWin()
     {
         TEWon = true;
+    }
+    public void buy_FTEDictionary()
+    {
+        FTEDictionary++;
     }
 }
