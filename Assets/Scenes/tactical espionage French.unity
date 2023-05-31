@@ -1234,6 +1234,7 @@ GameObject:
   - component: {fileID: 122392164}
   - component: {fileID: 122392165}
   - component: {fileID: 122392166}
+  - component: {fileID: 122392167}
   m_Layer: 8
   m_Name: baguette
   m_TagString: Untagged
@@ -1249,9 +1250,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122392163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.985, z: 0.01}
-  m_LocalScale: {x: 0.2875, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.71, z: 0.01}
+  m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1825079378}
   m_RootOrder: 0
@@ -1297,7 +1298,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fedc1efe51a4aba4e8f60a3a5e7151e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1325,15 +1326,27 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 3.91}
   m_EdgeRadius: 0
+--- !u!114 &122392167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122392163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038caddf2e7c52e4ca5d7bd70c178225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123726617
 GameObject:
   m_ObjectHideFlags: 0
@@ -19347,6 +19360,10 @@ PrefabInstance:
     - target: {fileID: 174752731717649982, guid: fb14150a66dfe3549854f40ca0133c35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051492229130283496, guid: fb14150a66dfe3549854f40ca0133c35, type: 3}
+      propertyPath: bribeReq
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb14150a66dfe3549854f40ca0133c35, type: 3}
