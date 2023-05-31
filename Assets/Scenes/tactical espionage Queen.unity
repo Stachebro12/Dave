@@ -2180,6 +2180,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1051492229130283496, guid: fb14150a66dfe3549854f40ca0133c35, type: 3}
+      propertyPath: bribeReq
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb14150a66dfe3549854f40ca0133c35, type: 3}
 --- !u!1 &290533838
