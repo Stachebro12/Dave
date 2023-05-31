@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class FacePlayer : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
+    private Transform Player;
 
     void Start()
     {
         enabled = false;
+        player = GameObject.Find("Player");
+        Player = player.GetComponent<Transform>();
     }
     void OnBecameVisible()
     {
@@ -19,7 +22,7 @@ public class FacePlayer : MonoBehaviour
     void Update()
     {
         // what direction do I want to look in?
-        Vector3 delta = player.position - transform.position;
+        Vector3 delta = Player.position - transform.position;
 
         // if we're at the target position, don't rotate -- just keep facing current direction (and don't divide by 0)
         if (delta.x == 0 && delta.y == 0) return;

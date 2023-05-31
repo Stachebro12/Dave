@@ -21,6 +21,7 @@ public class sight : MonoBehaviour
             if (hit.collider != null)
             {
             Transform target = hit.transform;
+            Debug.Log(target.name);
                 if (target.name == "Player")
                 {
                 alienNum = canvas.GetComponent<Stats>().alienNum;

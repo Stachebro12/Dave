@@ -19,6 +19,12 @@ public class MainMenu : MonoBehaviour
         date = GetComponentInChildren<Stats>().dateNum; //We want to make sure to do this only when we need to, not every frame.
     }
 
+    public void NewGame()
+    {
+        //ButtonSound.Play();
+        SceneManager.LoadScene("menu");
+    }
+
     public void Menu() {
         //ButtonSound.Play();
         SceneManager.LoadScene("Main Menu");

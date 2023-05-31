@@ -18,10 +18,13 @@ public class playerController : MonoBehaviour
     private int SpawnY;
     private GameObject Stats;
     private GameObject pp;
+    private Animator Walk;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Walk = GetComponent<Animator>();
         pp = GameObject.Find("PP");
         Stats = GameObject.Find("HUD");
         SpawnX = Stats.GetComponent<Stats>().SpawnX;
@@ -38,21 +41,25 @@ public class playerController : MonoBehaviour
         {
             rigidBody.MovePosition(transform.position + new Vector3(0, -distY, 0));
             transform.localRotation = Quaternion.Euler(0, 0, 180);
+            Walk.SetTrigger("move");
         }
         if (Input.GetKey(upKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(0, distY, 0));
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+            Walk.SetTrigger("move");
         }
         if (Input.GetKey(rightKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(distX, 0, 0));
             transform.localRotation = Quaternion.Euler(0, 0, 270);
+            Walk.SetTrigger("move");
         }
         if (Input.GetKey(leftKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(-distX, 0, 0));
             transform.localRotation = Quaternion.Euler(0, 0, 90);
+            Walk.SetTrigger("move");
         }
         if (Input.GetKey(upKey) && Input.GetKey(rightKey))
         {
@@ -69,6 +76,10 @@ public class playerController : MonoBehaviour
         if (Input.GetKey(downKey) && Input.GetKey(leftKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(-distD, -distD, 0));
+        }
+        if (!Input.anyKey)
+        {
+            Walk.SetTrigger("stop");
         }
     }
 }

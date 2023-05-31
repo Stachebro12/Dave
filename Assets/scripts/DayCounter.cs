@@ -17,6 +17,7 @@ public class DayCounter : MonoBehaviour
     private GameObject canvas;
     private float PP;
     private bool TE;
+    private bool checkpoint_1;
     private int alienNum;
 
     void Start()
@@ -33,6 +34,7 @@ public class DayCounter : MonoBehaviour
         PP = canvas.GetComponentInChildren<PP>().ppMax;
         TE = canvas.GetComponent<Stats>().TEWon;
         alienNum = canvas.GetComponent<Stats>().alienNum;
+        checkpoint_1 = canvas.GetComponent<Stats>().checkpoint1;
         if (day == 1)
         {
             DayText.text = "Day 1";
@@ -136,7 +138,10 @@ public class DayCounter : MonoBehaviour
         }
         if (day % 2 == 0)
         {
-            gift.SetActive(true);
+            if(checkpoint_1 == true)
+            {
+                gift.SetActive(true);
+            }
             shop.SetActive(false);
         }
         else
