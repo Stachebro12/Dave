@@ -23,7 +23,7 @@ public class shop : MonoBehaviour
     // Update is called once per frame
     public void Buy_FTEDictionary()
     {
-        if (money <= FTEDictionary_price)
+        if (money >= FTEDictionary_price)
         {
             Money.GetComponent<Money_count>().GainMoney(-FTEDictionary_price);
             Canvas.GetComponent<Stats>().buy_FTEDictionary();

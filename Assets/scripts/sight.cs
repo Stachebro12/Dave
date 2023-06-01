@@ -16,8 +16,8 @@ public class sight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, Vector2.up);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
+        Debug.DrawRay(transform.position, transform.up);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up);
             if (hit.collider != null)
             {
             Transform target = hit.transform;
