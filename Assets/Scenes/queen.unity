@@ -326,8 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: 1
   DayText: {fileID: 567622813}
-  shop: {fileID: 0}
-  gift: {fileID: 0}
+  shop: {fileID: 826359971}
+  gift: {fileID: 1471290012}
   PPRequirement: 30
 --- !u!114 &567622813
 MonoBehaviour:
