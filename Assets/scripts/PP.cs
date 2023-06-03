@@ -27,6 +27,10 @@ public class PP : MonoBehaviour
         }
         PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
+    public void IncreasePP(int Gains)
+    {
+        ppMax += Gains;
+    }
 
     public void RestorePP()
     {
