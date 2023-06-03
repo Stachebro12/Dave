@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class playerController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class playerController : MonoBehaviour
     private GameObject Stats;
     private GameObject pp;
     private Animator Walk;
+    private bool spawned = false;
 
 
     // Start is called before the first frame update
@@ -30,13 +32,22 @@ public class playerController : MonoBehaviour
         SpawnX = Stats.GetComponent<Stats>().SpawnX;
         SpawnY = Stats.GetComponent<Stats>().SpawnY;
         rigidBody = GetComponent<Rigidbody2D> ();
-        rigidBody.MovePosition(new Vector3(SpawnX, SpawnY, 0));
         pp.GetComponent<PP>().RestorePP();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (spawned == false)
+        {
+            rigidBody.MovePosition(new Vector3(SpawnX, SpawnY, 0));
+            GetComponent<BoxCollider2D>().enabled = false;
+            if (transform.position.x == SpawnX & transform.position.y == SpawnY)
+            {
+                spawned = true;
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
         if (Input.GetKey(downKey))
         {
             rigidBody.MovePosition(transform.position + new Vector3(0, -distY, 0));
