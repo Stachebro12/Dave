@@ -20,7 +20,7 @@ public class item_number : MonoBehaviour
     {
         if (item == 0)
         {
-            Count.text = "" + canvas.GetComponent<Stats>().FTEDictionary;
+            Count.text = "" + canvas.GetComponent<Stats>().dictionaries;
         }
     }
 }

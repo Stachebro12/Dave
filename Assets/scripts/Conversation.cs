@@ -17,12 +17,18 @@ public class Conversation : MonoBehaviour
     private string[] instructions; //A sequence of commands that tells the game how to behave. Write choice (##, ##, ##) to bring up a choice of 3 options,
                                    //and skip (##) to skip to a different line/
     private int instrucIndex = -1; //An indicator of which instruction to use.
-    private bool started = false; //Whether or not the dialogue has started
+    private bool started = false; //Whether or not the dialogue has started.
+    private int[] ppValues = new int[] { 0, 0, 0 };
     private GameObject canvas; //Make sure there is a canvas in whatever scene you use this in.
+    private Stats stats;
+    private DayCounter dayCounter;
+    private PP ppScript;
     private Conversation conversation; //A reference to this very script, which must be given to the Choice_Manager script.
     public GameObject textBox; //The Textbox object. Put this prefab into the field in the inspector. It is instantiated at runtime.
     public GameObject portrait; //The character portrait. Right now, changing to different character portraits is not possible.
     public GameObject choicePanel; //The menu that appears to offer the player a choice.
+    public GameObject importantButton;
+    private GameObject marker;
     private TMP_Text content; //The textbox that is modified through script.
     public Sprite theDave;
     public int alien; //Right now we'll set this in the inspector. This will determine what scene we load when the alien is caught.
@@ -35,6 +41,9 @@ public class Conversation : MonoBehaviour
     void Awake()
     {
         canvas = GameObject.Find("HUD"); //Finds the canvas in the scene, before anything else.
+        stats = canvas.GetComponent<Stats>();
+        dayCounter = canvas.transform.Find("Day").GetComponent<DayCounter>();
+        ppScript = canvas.transform.Find("PP").GetComponent<PP>();
         conversation = GetComponent<Conversation>();
     }
 
@@ -61,7 +70,7 @@ public class Conversation : MonoBehaviour
             if (doSkip)
             {
                 doSkip = false;
-                Requeue(Convert.ToInt32(instructions[instrucIndex].Substring(6, 2)));
+                Requeue(Convert.ToInt32(instructions[instrucIndex].Substring(6, 2)), 0);
             }
         }
     }
@@ -79,14 +88,20 @@ public class Conversation : MonoBehaviour
         GameObject newprefab = Instantiate(textBox, new Vector3(950, 150, 0), Quaternion.identity); //Instantiates the textbox.
         newprefab.transform.SetParent(canvas.transform);
         content = newprefab.transform.Find("Content").GetComponent<TMP_Text>();
+        marker = newprefab.transform.Find("Marker").gameObject;
         GameObject thisDave = Instantiate(portrait, new Vector3(0, 0, 0), Quaternion.identity); //Instantiates the character. We will need to assign this object to a variable if we want to manipulate it.
         thisDave.transform.localScale = new Vector3(1.25f, 1.25f, 0);
         thisDave.GetComponent<SpriteRenderer>().sprite = theDave;
+        if(stats.dictionaries > 0) {
+            GameObject dict = Instantiate(importantButton, new Vector3(1750, 850, 0), Quaternion.identity);
+            dict.transform.SetParent(canvas.transform);
+        }
         NextLine();
     }
 
-    public void Requeue(int lineSkip)
+    public void Requeue(int lineSkip, int changePP)
     { //This clears the queue and enqueues the dialogue array all over again from a certain point.
+        ppScript.IncreasePP(ppValues[changePP]);
         lines.Clear();
         string[] newLines = dialogue.sentences.Skip(lineSkip).Take(dialogue.sentences.Length - lineSkip).ToArray();
         foreach (string s in newLines)
@@ -100,6 +115,7 @@ public class Conversation : MonoBehaviour
 
     private void NextLine()
     {
+        marker.SetActive(false);
         instrucIndex++;
         isMain = false;
         if (lines.Count == 0)
@@ -130,7 +146,8 @@ public class Conversation : MonoBehaviour
         GameObject newChoices = Instantiate(choicePanel, new Vector3(950, 550, 0), Quaternion.identity); //This instantiates the choice panel.
         newChoices.transform.SetParent(canvas.transform);
         Choice_Manager choiceManager = newChoices.GetComponent<Choice_Manager>();
-        choiceManager.Options(Convert.ToInt32(instructions[instrucIndex].Substring(8, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(12, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(16, 2)), conversation);
+        ppValues = new int[] { Convert.ToInt32(instructions[instrucIndex].Substring(11, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(18, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(25, 2)) };
+        choiceManager.Options(Convert.ToInt32(instructions[instrucIndex].Substring(8, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(15, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(22, 2)), conversation);
         //You must input three numbers, one for each line that is an option. They must be 2 digit i.e. 04 instead of 4.
     }
 
@@ -138,18 +155,20 @@ public class Conversation : MonoBehaviour
     {
         Destroy(content.gameObject.transform.parent.gameObject);
         canvas.transform.Find("Panel").gameObject.SetActive(true);
+        stats.dateUp();
         canvas.GetComponent<MainMenu>().ExtractNum();
+        dayCounter.timePassing();
         if (alienNum == 1)
         {
             SceneManager.LoadScene("french_Main");
         }
         else if (alienNum == 2)
         {
-            SceneManager.LoadScene("queen");
+            SceneManager.LoadScene("queen_Main");
         }
         else if (alienNum == 3)
         {
-            SceneManager.LoadScene("empathetic");
+            SceneManager.LoadScene("empathetic_Main");
         }
     }
 
@@ -180,13 +199,17 @@ public class Conversation : MonoBehaviour
             }
         }
         isDone = true;
-        if (instructions[instrucIndex].Length == 19)
+        if (instructions[instrucIndex].Length == 28)
         { //This detects if one of the instructions is meant to instantiate a choice menu.
             ShowChoices();
         }
-        else if (instructions[instrucIndex].Substring(0, 4) == "skip")
-        { //This instruction is for skipping to another line in the sequence. This is impotant for dialogue trees.
-            doSkip = true;
+        else
+        {
+            marker.SetActive(true);
+            if (instructions[instrucIndex].Substring(0, 4) == "skip")
+            { //This instruction is for skipping to another line in the sequence. This is impotant for dialogue trees.
+                doSkip = true;
+            }
         }
     }
 

@@ -15,6 +15,7 @@ public class PP : MonoBehaviour
     public void UsePP(int cost)
     {
         ppNum -= cost;
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
     public void IncreasePP(int Gains)
     {
@@ -22,15 +23,17 @@ public class PP : MonoBehaviour
         if (ppNum > -Gains)
         {
             ppNum += Gains;
+            PPText.text = "PP: " + ppNum + "/" + ppMax;
         }
     }
 
     public void RestorePP()
     {
         ppNum = ppMax;
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
 
-    void Update()
+    void Start()
     {
         PPText.text = "PP: " + ppNum + "/" + ppMax;
     }

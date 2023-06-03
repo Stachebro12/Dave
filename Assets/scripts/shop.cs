@@ -26,7 +26,7 @@ public class shop : MonoBehaviour
         if (money >= FTEDictionary_price)
         {
             Money.GetComponent<Money_count>().GainMoney(-FTEDictionary_price);
-            Canvas.GetComponent<Stats>().buy_FTEDictionary();
+            Canvas.GetComponent<Stats>().buy_dictionaries();
                 }
     }
 }

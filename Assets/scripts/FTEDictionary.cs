@@ -12,9 +12,9 @@ public class FTEDictionary : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
-        if(canvas.GetComponent<Stats>().FTEDictionary > 0)
+        if(canvas.GetComponent<Stats>().dictionaries > 0)
         {
             this.gameObject.SetActive(true);
         }
@@ -22,7 +22,8 @@ public class FTEDictionary : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-    }
+    }*/
+
     public void Open_Dictionary()
     {
 
