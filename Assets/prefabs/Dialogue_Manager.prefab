@@ -53,6 +53,7 @@ MonoBehaviour:
   textBox: {fileID: 898664902158892787, guid: be0101729c6ad6b4690e581b13747b2d, type: 3}
   portrait: {fileID: 3135040105192680276, guid: 89e6c1febe47d9245a656598b1e01ff0, type: 3}
   choicePanel: {fileID: 8404671632712765633, guid: 1ebf8c8584c742e4f993e1c790df2359, type: 3}
+  importantButton: {fileID: 2138174179478653801, guid: 57d788a36f27e4345ba51434fe385ccd, type: 3}
   theDave: {fileID: 0}
   alien: 0
   backToMenu: 1
