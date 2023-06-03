@@ -16,6 +16,10 @@ public class PP : MonoBehaviour
     {
         ppNum -= cost;
     }
+    public void IncreasePP(int Gains)
+    {
+        ppMax += Gains;
+    }
 
     public void RestorePP()
     {
