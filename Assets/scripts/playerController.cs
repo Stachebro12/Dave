@@ -33,6 +33,7 @@ public class playerController : MonoBehaviour
         SpawnY = Stats.GetComponent<Stats>().SpawnY;
         rigidBody = GetComponent<Rigidbody2D> ();
         pp.GetComponent<PP>().RestorePP();
+        transform.position = new Vector3(SpawnX, SpawnY, 0);
     }
 
     // Update is called once per frame
@@ -40,13 +41,14 @@ public class playerController : MonoBehaviour
     {
         if (spawned == false)
         {
-            rigidBody.MovePosition(new Vector3(SpawnX, SpawnY, 0));
+            
+            /*rigidBody.MovePosition(new Vector3(SpawnX, SpawnY, 0));
             GetComponent<BoxCollider2D>().enabled = false;
             if (transform.position.x == SpawnX & transform.position.y == SpawnY)
             {
                 spawned = true;
                 GetComponent<BoxCollider2D>().enabled = true;
-            }
+            }*/
         }
         if (Input.GetKey(downKey))
         {

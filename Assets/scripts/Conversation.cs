@@ -154,21 +154,35 @@ public class Conversation : MonoBehaviour
     private void EndDialogue(int alienNum, bool doLoad)
     {
         Destroy(content.gameObject.transform.parent.gameObject);
-        canvas.transform.Find("Panel").gameObject.SetActive(true);
         stats.dateUp();
         canvas.GetComponent<MainMenu>().ExtractNum();
         dayCounter.timePassing();
-        if (alienNum == 1)
+        if (GameObject.Find("Lose") != null)
         {
-            SceneManager.LoadScene("french_Main");
+            if (alienNum == 1)
+            {
+                SceneManager.LoadScene("french lose");
+            }
+            else if (alienNum == 2)
+            {
+                SceneManager.LoadScene("queen lose");
+            }
         }
-        else if (alienNum == 2)
+        else
         {
-            SceneManager.LoadScene("queen_Main");
-        }
-        else if (alienNum == 3)
-        {
-            SceneManager.LoadScene("empathetic_Main");
+            canvas.transform.Find("Panel").gameObject.SetActive(true);
+            if (alienNum == 1)
+            {
+                SceneManager.LoadScene("french_Main");
+            }
+            else if (alienNum == 2)
+            {
+                SceneManager.LoadScene("queen_Main");
+            }
+            else if (alienNum == 3)
+            {
+                SceneManager.LoadScene("empathetic_Main");
+            }
         }
     }
 

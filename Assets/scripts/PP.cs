@@ -8,8 +8,8 @@ public class PP : MonoBehaviour
 {
     public Text PPText;
 
-    public float ppNum;
-    public float ppMax;
+    public int ppNum;
+    public int ppMax;
 
     // Update is called once per frame
     public void UsePP(int cost)

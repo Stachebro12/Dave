@@ -12,10 +12,10 @@ public class DayCounter : MonoBehaviour
     public Text DayText;
     public GameObject shop;
     public GameObject gift;
-    public float PPRequirement;
+    public int PPRequirement;
 
     private GameObject canvas;
-    private float PP;
+    public int PP;
     private bool TE;
     private bool checkpoint_1;
     private int alienNum;

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stats : MonoBehaviour {
     public int dateNum;
+    private int origiDate;
+    private bool canContinue = false;
     public int SpawnX;
     public int SpawnY;
     public int alienNum;
@@ -19,15 +22,40 @@ public class Stats : MonoBehaviour {
     public bool checkpoint10 = false;
     public bool TEWon = false;
     public int dictionaries = 0;
+    private DayCounter dayCounter;
 
     private GameObject gift;
 
+    private void Awake()
+    {
+        dayCounter = GetComponentInChildren<DayCounter>();
+    }
+
     void Start() {
         DontDestroyOnLoad(this.gameObject); //This is necessary to ensure the HUD carries between scenes.
+        origiDate = dateNum;
     }
 
     public void dateUp() {
-        dateNum += 1;
+        dateNum++;
+        if (dateNum == origiDate + 6 && alienNum != 3) {
+            int pp = dayCounter.PP;
+            int PPRequirement = dayCounter.PPRequirement;
+            if (pp >= 0) {
+                dateNum++;
+                canContinue = true;
+            }
+            if (pp >= PPRequirement) {
+                dateNum++;
+            }
+        } else if (canContinue == true) {
+            if (alienNum == 1) {
+                dateNum = 13;
+            }
+            if (alienNum == 2) {
+                dateNum = 26;
+            }
+        }
     }
 
     public void NewSpawnPoint(int SpawnPointX, int SpawnPointY)
