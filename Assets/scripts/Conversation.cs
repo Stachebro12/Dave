@@ -65,6 +65,7 @@ public class Conversation : MonoBehaviour
             }
             else
             {
+                //Debug.Log("Truifying isDone.");
                 isDone = true;
             }
             if (doSkip)
@@ -110,6 +111,7 @@ public class Conversation : MonoBehaviour
         }
         instrucIndex = lineSkip - 1; //We also need to have the correct indicator of which instruction to execute.
         mustChoose = false;
+        started = false;
         NextLine();
     }
 
@@ -136,6 +138,7 @@ public class Conversation : MonoBehaviour
             content.color = Color.cyan; //Changes the color to cyan if it is the character speaking/thinking.
         }
         StopAllCoroutines(); //Stops writing the line. Otherwise, we could potentially have two lines typing at once.
+        //Debug.Log("Falsifying isDone.");
         isDone = false;
         StartCoroutine(TypeSentence(line)); //Types the sentence gradually.
     }
@@ -188,6 +191,10 @@ public class Conversation : MonoBehaviour
 
     IEnumerator TypeSentence(string sentece)
     {
+        if (started == false) {
+            yield return null;
+            started = true;
+        }
         foreach (char letter in sentece.ToCharArray())
         {
             if (letter != '\\' && letter != '|')
@@ -209,6 +216,7 @@ public class Conversation : MonoBehaviour
             }
             if (!isDone)
             { //If the player inputs, we want to enter in the rest of the dialogue all at once.
+
                 yield return new WaitForSeconds(newTime);
             }
         }

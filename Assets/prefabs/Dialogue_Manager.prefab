@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f313bdb36fff7044a8356f609390706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoStart: 0
-  pauseTime: 0
+  autoStart: 1
+  pauseTime: 0.05
   dialogue:
     dave: 
     sentences: []
@@ -55,5 +55,5 @@ MonoBehaviour:
   choicePanel: {fileID: 8404671632712765633, guid: 1ebf8c8584c742e4f993e1c790df2359, type: 3}
   importantButton: {fileID: 2138174179478653801, guid: 57d788a36f27e4345ba51434fe385ccd, type: 3}
   theDave: {fileID: 0}
-  alien: 0
+  alien: 1
   backToMenu: 1

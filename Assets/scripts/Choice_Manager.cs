@@ -17,7 +17,7 @@ public class Choice_Manager : MonoBehaviour {
         buttons[1].GetComponent<Button>().onClick.AddListener(() => Execute(1));
         buttons[2].GetComponent<Button>().onClick.AddListener(() => Execute(2));
         foreach (GameObject button in buttons) {
-            button.transform.Find("Text").GetComponent<TMP_Text>().text = conversation.GetLine(jumps[intIndex]).ToString(); //Changing the text to the option it represents.
+            button.transform.Find("Text").GetComponent<TMP_Text>().text = conversation.GetLine(jumps[intIndex] - 1).ToString(); //Changing the text to the option it represents.
             intIndex++;
         }
     }
