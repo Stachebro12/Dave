@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Conversation : MonoBehaviour
 { //Use this with the Dialogue Manager prefab.
@@ -12,10 +13,13 @@ public class Conversation : MonoBehaviour
     public float pauseTime; //The amount of time in seconds (make it a decimal) between characters being entered into the textbox.
     private float smallPause = 0.5f;
     private float bigPause = 1f;
+    private bool isWaiting = false;
+    private string thisSucks;
     public Dialogue dialogue; //This draws from the Dialogue script.
     private Queue<string> lines; //The lines of text in the dialogue. Note that this is a queue.
-    private string[] instructions; //A sequence of commands that tells the game how to behave. Write choice (##, ##, ##) to bring up a choice of 3 options,
-                                   //and skip (##) to skip to a different line/
+    private Queue<Sprite> images;
+    private string[] instructions; //A sequence of commands that tells the game how to behave. Write choice (## PP, ## PP, ## PP) to bring up a choice of 3 options,
+                                   //and skip (##) to skip to a different line.
     private int instrucIndex = -1; //An indicator of which instruction to use.
     private bool started = false; //Whether or not the dialogue has started.
     private int[] ppValues = new int[] { 0, 0, 0 };
@@ -29,8 +33,8 @@ public class Conversation : MonoBehaviour
     public GameObject choicePanel; //The menu that appears to offer the player a choice.
     public GameObject importantButton;
     private GameObject marker;
-    private TMP_Text content; //The textbox that is modified through script.
-    public Sprite theDave;
+    private TMP_Text content; //The textbox that is modified through script;
+    private GameObject thisDave;
     public int alien; //Right now we'll set this in the inspector. This will determine what scene we load when the alien is caught.
     public bool backToMenu = true; //This will return you to the menu if set to true.
     private bool isMain = false; //This variable determines whether the dialogue is for the main character or the Dave.
@@ -65,8 +69,12 @@ public class Conversation : MonoBehaviour
             }
             else
             {
-                //Debug.Log("Truifying isDone.");
                 isDone = true;
+                if (isWaiting)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(TypeSentence(thisSucks.Substring(content.text.Length + 1, (thisSucks.Length - content.text.Length) - 1)));
+                }
             }
             if (doSkip)
             {
@@ -80,20 +88,27 @@ public class Conversation : MonoBehaviour
     {
         lines = new Queue<string>();
         lines.Clear();
+        images = new Queue<Sprite>();
+        images.Clear();
         foreach (string s in dialogue.sentences)
         {
             lines.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
         }
+        foreach (Sprite s in dialogue.daves)
+        {
+            images.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
+        }
         instructions = dialogue.instructions;
         started = true;
+        thisDave = Instantiate(portrait, new Vector3(950, 400, 0), Quaternion.identity); //Instantiates the character. We will need to assign this object to a variable if we want to manipulate it.
+        thisDave.transform.SetParent(canvas.transform);
+        thisDave.transform.localScale = new Vector3(10f, 10f, 0);
         GameObject newprefab = Instantiate(textBox, new Vector3(950, 150, 0), Quaternion.identity); //Instantiates the textbox.
         newprefab.transform.SetParent(canvas.transform);
         content = newprefab.transform.Find("Content").GetComponent<TMP_Text>();
         marker = newprefab.transform.Find("Marker").gameObject;
-        GameObject thisDave = Instantiate(portrait, new Vector3(0, 0, 0), Quaternion.identity); //Instantiates the character. We will need to assign this object to a variable if we want to manipulate it.
-        thisDave.transform.localScale = new Vector3(1.25f, 1.25f, 0);
-        thisDave.GetComponent<SpriteRenderer>().sprite = theDave;
-        if(stats.dictionaries > 0) {
+        if (stats.dictionaries > 0)
+        {
             GameObject dict = Instantiate(importantButton, new Vector3(1750, 850, 0), Quaternion.identity);
             dict.transform.SetParent(canvas.transform);
         }
@@ -104,10 +119,16 @@ public class Conversation : MonoBehaviour
     { //This clears the queue and enqueues the dialogue array all over again from a certain point.
         ppScript.IncreasePP(ppValues[changePP]);
         lines.Clear();
+        images.Clear();
         string[] newLines = dialogue.sentences.Skip(lineSkip).Take(dialogue.sentences.Length - lineSkip).ToArray();
+        Sprite[] newImages = dialogue.daves.Skip(lineSkip).Take(dialogue.daves.Length - lineSkip).ToArray();
         foreach (string s in newLines)
         {
             lines.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
+        }
+        foreach (Sprite s in newImages)
+        {
+            images.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
         }
         instrucIndex = lineSkip - 1; //We also need to have the correct indicator of which instruction to execute.
         mustChoose = false;
@@ -125,7 +146,13 @@ public class Conversation : MonoBehaviour
             EndDialogue(alien, backToMenu);
             return;
         }
+        Sprite newDave = images.Dequeue();
+        if (newDave != null)
+        {
+            thisDave.GetComponent<Image>().sprite = newDave;
+        }
         string line = lines.Dequeue(); //The Dequeue function will remove the next item from the queue and return it's value.
+        thisSucks = line;
         if (line.Substring(0, 3) == "\\m ")
         { //Parses the stirng for '\m ' to determine if it is the main character speaking/thinking.
             line = line.Substring(3, line.Length - 3); //Make sure the dialogue is not less than 3 characters.
@@ -157,6 +184,7 @@ public class Conversation : MonoBehaviour
     private void EndDialogue(int alienNum, bool doLoad)
     {
         Destroy(content.gameObject.transform.parent.gameObject);
+        Destroy(thisDave);
         stats.dateUp();
         canvas.GetComponent<MainMenu>().ExtractNum();
         dayCounter.timePassing();
@@ -191,7 +219,8 @@ public class Conversation : MonoBehaviour
 
     IEnumerator TypeSentence(string sentece)
     {
-        if (started == false) {
+        if (started == false)
+        {
             yield return null;
             started = true;
         }
@@ -216,8 +245,15 @@ public class Conversation : MonoBehaviour
             }
             if (!isDone)
             { //If the player inputs, we want to enter in the rest of the dialogue all at once.
-
+                if (newTime > pauseTime)
+                {
+                    isWaiting = true;
+                }
                 yield return new WaitForSeconds(newTime);
+                if (isWaiting)
+                {
+                    isWaiting = false;
+                }
             }
         }
         isDone = true;
