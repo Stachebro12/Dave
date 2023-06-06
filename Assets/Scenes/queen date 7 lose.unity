@@ -379,12 +379,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8876639809849150405, guid: 17cc1997d5049774a9e7be9866b759b0, type: 3}
       propertyPath: alien
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8876639809849150405, guid: 17cc1997d5049774a9e7be9866b759b0, type: 3}
       propertyPath: theDave
       value: 
       objectReference: {fileID: 21300000, guid: 7e85a0ef8ebf5fc418e97e3cfe700fb2, type: 3}
+    - target: {fileID: 8876639809849150405, guid: 17cc1997d5049774a9e7be9866b759b0, type: 3}
+      propertyPath: dialogue.dave
+      value: Queen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cc1997d5049774a9e7be9866b759b0, type: 3}
 --- !u!1 &1948105510
