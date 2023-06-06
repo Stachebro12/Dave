@@ -171,7 +171,7 @@ MonoBehaviour:
   checkpoint9: 0
   checkpoint10: 0
   TEWon: 0
-  FTEDictionary: 0
+  dictionaries: 0
 --- !u!114 &551969966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +328,8 @@ MonoBehaviour:
   DayText: {fileID: 567622813}
   shop: {fileID: 826359971}
   gift: {fileID: 1471290012}
-  PPRequirement: 30
+  PPRequirement: 20
+  PP: 0
 --- !u!114 &567622813
 MonoBehaviour:
   m_ObjectHideFlags: 0
