@@ -15,14 +15,11 @@ public class shop : MonoBehaviour
         Canvas = GameObject.Find("HUD");
         Money = GameObject.Find("Money");
     }
-    private void Update()
-    {
-     money = Money.GetComponent<Money_count>().MoneyNum;
-    }
 
     // Update is called once per frame
     public void Buy_FTEDictionary()
     {
+        money = Money.GetComponent<Money_count>().MoneyNum;
         if (money >= FTEDictionary_price)
         {
             Money.GetComponent<Money_count>().GainMoney(-FTEDictionary_price);

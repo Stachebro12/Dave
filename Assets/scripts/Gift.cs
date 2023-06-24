@@ -15,14 +15,11 @@ public class Gift : MonoBehaviour
         Canvas = GameObject.Find("HUD");
         PP = GameObject.Find("PP");
     }
-    private void Update()
-    {
-        FTEDictionary_Num = Canvas.GetComponent<Stats>().dictionaries;
-    }
 
     // Update is called once per frame
     public void Give_FTEDictionary()
     {
+        FTEDictionary_Num = Canvas.GetComponent<Stats>().dictionaries;
         if (FTEDictionary_Num > 0)
         {
             PP.GetComponent<PP>().IncreasePP(FTEDictionary_PP);
