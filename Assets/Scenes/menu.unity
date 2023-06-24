@@ -1096,6 +1096,7 @@ GameObject:
   - component: {fileID: 1634728027}
   - component: {fileID: 1634728026}
   - component: {fileID: 1634728025}
+  - component: {fileID: 1634728030}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1203,6 +1204,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1634728030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634728024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cef7a0a34b71341b0995fd55cad421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienNum: 1
+  alienTotal: 3
+  leftKey: 276
+  rightKey: 275
+  alien1: {fileID: 2121915499}
+  alien2: {fileID: 1316674114}
+  alien3: {fileID: 986346264}
 --- !u!1 &2121915499
 GameObject:
   m_ObjectHideFlags: 0

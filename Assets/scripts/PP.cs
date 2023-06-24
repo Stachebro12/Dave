@@ -19,12 +19,13 @@ public class PP : MonoBehaviour
     }
     public void IncreasePP(int Gains)
     {
+        Debug.Log(Gains);
         ppMax += Gains;
         if (ppNum > -Gains)
         {
             ppNum += Gains;
-            PPText.text = "PP: " + ppNum + "/" + ppMax;
         }
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
 
     public void RestorePP()
