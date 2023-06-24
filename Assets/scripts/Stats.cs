@@ -22,6 +22,7 @@ public class Stats : MonoBehaviour {
     public bool checkpoint10 = false;
     public bool TEWon = false;
     public int dictionaries = 0;
+    public int givenDictionaries = 0;
     private DayCounter dayCounter;
 
     private GameObject gift;
@@ -111,5 +112,10 @@ public class Stats : MonoBehaviour {
     public void buy_dictionaries()
     {
         dictionaries++;
+    }
+    public void give_dictionaries()
+    {
+        dictionaries--;
+        givenDictionaries++;
     }
 }
