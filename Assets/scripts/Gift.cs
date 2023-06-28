@@ -19,11 +19,14 @@ public class Gift : MonoBehaviour
     // Update is called once per frame
     public void Give_FTEDictionary()
     {
-        FTEDictionary_Num = Canvas.GetComponent<Stats>().dictionaries;
-        if (FTEDictionary_Num > 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            PP.GetComponent<PP>().IncreasePP(FTEDictionary_PP);
-            Canvas.GetComponent<Stats>().give_dictionaries();
+            FTEDictionary_Num = Canvas.GetComponent<Stats>().dictionaries;
+            if (FTEDictionary_Num > 0)
+            {
+                PP.GetComponent<PP>().IncreasePP(FTEDictionary_PP);
+                Canvas.GetComponent<Stats>().give_dictionaries();
+            }
         }
     }
 }
