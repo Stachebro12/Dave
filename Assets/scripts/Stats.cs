@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.WSA;
 
 public class Stats : MonoBehaviour {
     public int dateNum;
@@ -21,8 +22,27 @@ public class Stats : MonoBehaviour {
     public bool checkpoint9 = false;
     public bool checkpoint10 = false;
     public bool TEWon = false;
+
     public int dictionaries = 0;
+    public int HPCrown = 0;
+    public int TrenchCoat = 0;
+    public int FakeID = 0;
+    public int ToyGun = 0;
+    public int FacePaint = 0;
+    public int TeaSet = 0;
+    public int Saxaphone = 0;
+    public int EifelTower = 0;
+
     public int givenDictionaries = 0;
+    public int givenHPCrown = 0;
+    public int givenTrenchCoat = 0;
+    public int givenFakeID = 0;
+    public int givenToyGun = 0;
+    public int givenFacePaint = 0;
+    public int givenTeaSet = 0;
+    public int givenSaxaphone = 0;
+    public int givenEifelTower = 0;
+
     private DayCounter dayCounter;
 
     private GameObject gift;
@@ -112,6 +132,38 @@ public class Stats : MonoBehaviour {
     public void buy_dictionaries()
     {
         dictionaries++;
+    }
+    public void buy_HPCrown()
+    {
+        HPCrown++;
+    }
+    public void buy_TrenchCoat()
+    {
+        TrenchCoat++;
+    }
+    public void buy_FakeID()
+    {
+        FakeID++;
+    }
+    public void buy_ToyGun()
+    {
+        ToyGun++;
+    }
+    public void buy_FacePaint()
+    {
+        FacePaint++;
+    }
+    public void buy_TeaSet()
+    {
+        TeaSet++;
+    }
+    public void buy_Saxaphone()
+    {
+        Saxaphone++;
+    }
+    public void buy_EifelTower()
+    {
+        EifelTower++;
     }
     public void give_dictionaries()
     {
