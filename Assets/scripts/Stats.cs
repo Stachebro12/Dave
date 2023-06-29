@@ -170,4 +170,44 @@ public class Stats : MonoBehaviour {
         dictionaries--;
         givenDictionaries++;
     }
+    public void give_HPCrown()
+    {
+        HPCrown--;
+        givenHPCrown++;
+    }
+    public void give_TrenchCoat()
+    {
+        TrenchCoat--;
+        givenTrenchCoat++;
+    }
+    public void give_FakeID()
+    {
+        FakeID--;
+        givenFakeID++;
+    }
+    public void give_ToyGun()
+    {
+        ToyGun--;
+        givenToyGun++;
+    }
+    public void give_FacePaint()
+    {
+        FacePaint--;
+        givenFacePaint++;
+    }
+    public void give_TeaSet()
+    {
+        TeaSet--;
+        givenTeaSet++;
+    }
+    public void give_Saxaphone()
+    {
+        Saxaphone--;
+        givenSaxaphone++;
+    }
+    public void give_EifelTower()
+    {
+        EifelTower--;
+        givenEifelTower++;
+    }
 }
