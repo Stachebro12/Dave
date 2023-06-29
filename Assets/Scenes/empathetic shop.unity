@@ -439,7 +439,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_FakeID
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -739,7 +739,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_Saxaphone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -873,7 +873,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_HPCrown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1668,7 +1668,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_TrenchCoat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2263,7 +2263,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_TeaSet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2493,7 +2493,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_EifelTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2986,7 +2986,7 @@ GameObject:
   - component: {fileID: 1169076635}
   - component: {fileID: 1169076634}
   m_Layer: 5
-  m_Name: Eifell Tower
+  m_Name: Eifel Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3048,7 +3048,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Eifell Tower
+  m_Text: Eifel Tower Souvenir
 --- !u!222 &1169076635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3533,7 +3533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_ToyGun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4157,7 +4157,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1935929736}
         m_TargetAssemblyTypeName: shop, Assembly-CSharp
-        m_MethodName: Buy_FTEDictionary
+        m_MethodName: Buy_FacePaint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5316,6 +5316,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   FTEDictionary_price: 40
+  HPCrown_price: 20
+  TrenchCoat_price: 3
+  FakeID_price: 40
+  ToyGun_price: 2
+  FacePaint_price: 10
+  TeaSet_price: 30
+  Saxaphone_price: 40
+  EifelTower_price: 2
 --- !u!1 &2058423380
 GameObject:
   m_ObjectHideFlags: 0
