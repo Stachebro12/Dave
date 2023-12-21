@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.WSA;
 
 public class Stats : MonoBehaviour {
     public int dateNum;
@@ -209,5 +208,9 @@ public class Stats : MonoBehaviour {
     {
         EifelTower--;
         givenEifelTower++;
+    }
+    public void Use_FakeID()
+    {
+        givenFakeID--;
     }
 }
