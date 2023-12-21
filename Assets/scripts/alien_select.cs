@@ -61,4 +61,32 @@ public class alien_select : MonoBehaviour
             alien3.SetActive(false);
         }
     }
+    public void LeftArrow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (alienNum > 1)
+            {
+                alienNum--;
+            }
+            else
+            {
+                alienNum = alienTotal;
+            }
+        }
+    }
+    public void RightArrow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (alienNum < alienTotal)
+            {
+                alienNum++;
+            }
+            else
+            {
+                alienNum = 1;
+            }
+        }
+    }
 }

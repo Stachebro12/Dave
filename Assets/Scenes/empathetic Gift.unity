@@ -491,7 +491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_TrenchCoat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 7
   Count: {fileID: 321277137}
 --- !u!114 &321277137
 MonoBehaviour:
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 3
   Count: {fileID: 351617884}
 --- !u!114 &351617884
 MonoBehaviour:
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 4
   Count: {fileID: 366594699}
 --- !u!114 &366594699
 MonoBehaviour:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_ToyGun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 1
   Count: {fileID: 556964432}
 --- !u!114 &556964432
 MonoBehaviour:
@@ -2370,7 +2370,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_EifelTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 2
   Count: {fileID: 994799185}
 --- !u!114 &994799185
 MonoBehaviour:
@@ -2735,7 +2735,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_HPCrown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 8
   Count: {fileID: 1322519960}
 --- !u!114 &1322519960
 MonoBehaviour:
@@ -3100,7 +3100,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_FacePaint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3234,7 +3234,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_FakeID
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3551,7 +3551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 5
   Count: {fileID: 1414225805}
 --- !u!114 &1414225805
 MonoBehaviour:
@@ -3816,7 +3816,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_TeaSet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4516,7 +4516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528184644}
         m_TargetAssemblyTypeName: Gift, Assembly-CSharp
-        m_MethodName: Give_FTEDictionary
+        m_MethodName: Give_Saxaphone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4751,7 +4751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 0
-  item: 0
+  item: 6
   Count: {fileID: 2146217032}
 --- !u!114 &2146217032
 MonoBehaviour:
