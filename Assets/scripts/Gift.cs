@@ -15,6 +15,7 @@ public class Gift : MonoBehaviour
     public int TeaSet_PP;
     public int Saxaphone_PP;
     public int EifelTower_PP;
+    public int Pillow_PP;
 
     public int FTEDictionary_Num;
     public int HPCrown_Num;
@@ -25,6 +26,7 @@ public class Gift : MonoBehaviour
     public int TeaSet_Num;
     public int Saxaphone_Num;
     public int EifelTower_Num;
+    public int Pillow_Num;
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +141,18 @@ public class Gift : MonoBehaviour
             {
                 PP.GetComponent<PP>().IncreasePP(EifelTower_PP);
                 Canvas.GetComponent<Stats>().give_EifelTower();
+            }
+        }
+    }
+    public void Give_Pillow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Pillow_Num = Canvas.GetComponent<Stats>().Pillow;
+            if (Pillow_Num > 0)
+            {
+                PP.GetComponent<PP>().IncreasePP(Pillow_PP);
+                Canvas.GetComponent<Stats>().give_Pillow();
             }
         }
     }

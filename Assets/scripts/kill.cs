@@ -21,21 +21,28 @@ public class kill : MonoBehaviour
         Debug.Log(collision.gameObject);
         if (collision.gameObject == player)
         {
-            alienNum = canvas.GetComponent<Stats>().alienNum;
-            canvas.transform.Find("Panel").gameObject.SetActive(true);
-            canvas.GetComponent<MainMenu>().ExtractNum();
-            canvas.GetComponentInChildren<DayCounter>().timePassing();
-            if (alienNum == 1)
+            if (canvas.GetComponent<Stats>().givenArmour == 0)
             {
-                SceneManager.LoadScene("french_main");
+                alienNum = canvas.GetComponent<Stats>().alienNum;
+                canvas.transform.Find("Panel").gameObject.SetActive(true);
+                canvas.GetComponent<MainMenu>().ExtractNum();
+                canvas.GetComponentInChildren<DayCounter>().timePassing();
+                if (alienNum == 1)
+                {
+                    SceneManager.LoadScene("french_main");
+                }
+                else if (alienNum == 2)
+                {
+                    SceneManager.LoadScene("queen_main");
+                }
+                else if (alienNum == 3)
+                {
+                    SceneManager.LoadScene("empathetic_main");
+                }
             }
-            else if (alienNum == 2)
+            else
             {
-                SceneManager.LoadScene("queen_main");
-            }
-            else if (alienNum == 3)
-            {
-                SceneManager.LoadScene("empathetic_main");
+                canvas.GetComponent<Stats>().Use_Armour();
             }
         }
     }

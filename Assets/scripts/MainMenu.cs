@@ -94,4 +94,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("empathetic Gift");
         transform.Find("Panel").gameObject.SetActive(false);
     }
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
