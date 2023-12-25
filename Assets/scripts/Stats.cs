@@ -31,20 +31,19 @@ public class Stats : MonoBehaviour {
     public int TeaSet = 0;
     public int Saxaphone = 0;
     public int EifelTower = 0;
+    public int Pillow = 0;
 
     public int givenDictionaries = 0;
     public int givenHPCrown = 0;
-    public int givenTrenchCoat = 0;
+    public int givenDisguise = 0;
     public int givenFakeID = 0;
     public int givenToyGun = 0;
-    public int givenFacePaint = 0;
     public int givenTeaSet = 0;
     public int givenSaxaphone = 0;
     public int givenEifelTower = 0;
+    public int givenArmour = 0;
 
     private DayCounter dayCounter;
-
-    private GameObject gift;
 
     private void Awake()
     {
@@ -164,6 +163,10 @@ public class Stats : MonoBehaviour {
     {
         EifelTower++;
     }
+    public void buy_Pillow()
+    {
+        Pillow++;
+    }
     public void give_dictionaries()
     {
         dictionaries--;
@@ -177,7 +180,7 @@ public class Stats : MonoBehaviour {
     public void give_TrenchCoat()
     {
         TrenchCoat--;
-        givenTrenchCoat++;
+        givenDisguise += 3;
     }
     public void give_FakeID()
     {
@@ -192,7 +195,7 @@ public class Stats : MonoBehaviour {
     public void give_FacePaint()
     {
         FacePaint--;
-        givenFacePaint++;
+        givenDisguise++;
     }
     public void give_TeaSet()
     {
@@ -209,8 +212,25 @@ public class Stats : MonoBehaviour {
         EifelTower--;
         givenEifelTower++;
     }
+    public void give_Pillow()
+    {
+        Pillow--;
+        givenArmour++;
+    }
     public void Use_FakeID()
     {
         givenFakeID--;
+    }
+    public void Use_Disguise()
+    {
+        givenDisguise--;
+    }
+    public void Use_ToyGun()
+    {
+        givenToyGun--;
+    }
+    public void Use_Armour()
+    {
+        givenArmour--;
     }
 }
