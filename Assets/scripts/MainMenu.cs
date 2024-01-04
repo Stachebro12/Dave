@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public int date;
     public bool isMain; //Set this to true if this object is on the main menu. Otherwise, it will look for a dateNum variable where there isn't one.
                         //It won't destroy the game, but it will throw an annoying error.
+    public GameObject AreaSelect;
 
     public void Awake() {
         if (!isMain) {
@@ -34,11 +36,17 @@ public class MainMenu : MonoBehaviour
         //ButtonSound.Play();
         SceneManager.LoadScene(alien); //Using string values, we can load the alien scene with one instruction, rather than an if branch.
     }
-    
     public void DoDate() {
         //ButtonSound.Play();
-        transform.Find("Panel").gameObject.SetActive(false); //We want to disable the alien menu when we enter the date.
-        SceneManager.LoadScene(date);
+        if (gameObject.GetComponent<Stats>().checkpoint4)
+        {
+            AreaSelect.SetActive(true);
+        }
+        else
+        {
+            transform.Find("Panel").gameObject.SetActive(false); //We want to disable the alien menu when we enter the date.
+            SceneManager.LoadScene(date);
+        }
     }
     public void Escape1()
     {
