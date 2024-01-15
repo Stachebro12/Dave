@@ -54,5 +54,9 @@ public class item_number : MonoBehaviour
         {
             Count.text = "" + canvas.GetComponent<Stats>().EifelTower;
         }
+        if (item == 9)
+        {
+            Count.text = "" + canvas.GetComponent<Stats>().Pillow;
+        }
     }
 }

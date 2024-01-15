@@ -17,6 +17,7 @@ public class shop : MonoBehaviour
     public float TeaSet_price;
     public float Saxaphone_price;
     public float EifelTower_price;
+    public float Pillow_price;
 
     // Start is called before the first frame update
     void Start()
@@ -134,4 +135,16 @@ public class shop : MonoBehaviour
                 }
             }
         }
+    public void Buy_Pillow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            money = Money.GetComponent<Money_count>().MoneyNum;
+            if (money >= EifelTower_price)
+            {
+                Money.GetComponent<Money_count>().GainMoney(-Pillow_price);
+                Canvas.GetComponent<Stats>().buy_Pillow();
+            }
+        }
+    }
 }

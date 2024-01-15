@@ -66,22 +66,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("tactical espionage Empathetic");
         transform.Find("Panel").gameObject.SetActive(false);
     }
-    public void Shop1()
+    public void Shop()
     {
         //ButtonSound.Play();
-        SceneManager.LoadScene("french Shop");
-        transform.Find("Panel").gameObject.SetActive(false);
-    }
-    public void Shop2()
-    {
-        //ButtonSound.Play();
-        SceneManager.LoadScene("queen Shop");
-        transform.Find("Panel").gameObject.SetActive(false);
-    }
-    public void Shop3()
-    {
-        //ButtonSound.Play();
-        SceneManager.LoadScene("empathetic Shop");
+        SceneManager.LoadScene("Shop");
         transform.Find("Panel").gameObject.SetActive(false);
     }
     public void Gift1()

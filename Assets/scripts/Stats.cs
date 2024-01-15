@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Stats : MonoBehaviour {
     public int dateNum;
@@ -43,6 +44,11 @@ public class Stats : MonoBehaviour {
     public int givenEifelTower = 0;
     public int givenArmour = 0;
 
+    public Text Disguise;
+    public Text Armour;
+    public Text Ammo;
+    public Text IDs;
+
     private DayCounter dayCounter;
 
     private void Awake()
@@ -53,6 +59,14 @@ public class Stats : MonoBehaviour {
     void Start() {
         DontDestroyOnLoad(this.gameObject); //This is necessary to ensure the HUD carries between scenes.
         origiDate = dateNum;
+    }
+
+    public void Update()
+    {
+        Disguise.text = "" + givenDisguise;
+        Armour.text = "" + givenArmour;
+        Ammo.text = "" + givenToyGun;
+        IDs.text = "" + givenFakeID;
     }
 
     public void dateUp() {
