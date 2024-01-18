@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class IDdoor : MonoBehaviour
 {
-    public GameObject parent;
+    private Animator open;
     private GameObject Canvas;
     public int FakeIDs = 0;
 
     void Start()
     {
         Canvas = GameObject.Find("HUD");
+        open = gameObject.GetComponent<Animator>();
     }
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
             FakeIDs = Canvas.GetComponent<Stats>().givenFakeID;
             if (FakeIDs > 0)
             {
-                Destroy(parent);
+                open.SetTrigger("open_door_1");
                 Canvas.GetComponent<Stats>().Use_FakeID();
             }
         }
