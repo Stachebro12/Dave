@@ -18,7 +18,6 @@ public class kill : MonoBehaviour
     // Start is called before the first frame update
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject);
         if (collision.gameObject == player)
         {
             if (canvas.GetComponent<Stats>().givenArmour == 0)
