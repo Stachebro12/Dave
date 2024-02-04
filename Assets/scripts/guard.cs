@@ -9,10 +9,13 @@ public class guard : MonoBehaviour
     public bool stunned;
     public int bribeReq;
     public int bribeNum;
+
+    private Animator StunAnim;
     // Start is called before the first frame update
     void Start()
     {
         stunned = false;
+        StunAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,8 +42,10 @@ public class guard : MonoBehaviour
     {
         GetComponent<sight>().enabled = false;
         stunned = true;
+        StunAnim.SetTrigger("stun");
         yield return new WaitForSeconds(stunTime);
         GetComponent<sight>().enabled = true;
+        StunAnim.SetTrigger("idle");
         stunned = false;
     }
     public void stunKill()

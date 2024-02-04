@@ -7,10 +7,12 @@ public class patrol : MonoBehaviour
     public Transform[] waypoints;
     private int _currentWaypointIndex = 0;
     private float _speed = 2f;
+
+    private Animator walk;
     // Start is called before the first frame update
     void Start()
     {
-        
+        walk = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class patrol : MonoBehaviour
             }
             else
             {
+                walk.SetBool("walk", true);
                 transform.position = Vector3.MoveTowards(
                     transform.position,
                     wp.position,
