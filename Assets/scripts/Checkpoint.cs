@@ -129,6 +129,7 @@ public class Checkpoint : MonoBehaviour
         if (CheckpointNum == 5)
         {
             stats.GetComponent<Stats>().check5();
+            stats.GetComponentInChildren<Money_count>().GainMoney(500);
         }
         if (CheckpointNum == 6)
         {
@@ -145,6 +146,7 @@ public class Checkpoint : MonoBehaviour
         if (CheckpointNum == 9)
         {
             stats.GetComponent<Stats>().check9();
+            stats.GetComponentInChildren<Money_count>().GainMoney(1000);
         }
         if (CheckpointNum == 10)
         {
