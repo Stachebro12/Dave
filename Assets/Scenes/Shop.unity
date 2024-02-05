@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 173486809}
   - component: {fileID: 173486811}
   - component: {fileID: 173486810}
+  - component: {fileID: 173486812}
   m_Layer: 5
   m_Name: Face Paint Kit
   m_TagString: Untagged
@@ -511,6 +512,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173486808}
   m_CullTransparentMesh: 1
+--- !u!114 &173486812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173486808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 3
 --- !u!1 &206815274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1093,7 @@ GameObject:
   - component: {fileID: 395882303}
   - component: {fileID: 395882305}
   - component: {fileID: 395882304}
+  - component: {fileID: 395882306}
   m_Layer: 5
   m_Name: Trench Coat
   m_TagString: Untagged
@@ -1151,6 +1166,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395882302}
   m_CullTransparentMesh: 1
+--- !u!114 &395882306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395882302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 7
 --- !u!1 &398155624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2530,7 @@ GameObject:
   - component: {fileID: 1071683833}
   - component: {fileID: 1071683835}
   - component: {fileID: 1071683834}
+  - component: {fileID: 1071683836}
   m_Layer: 5
   m_Name: Hard Pillow
   m_TagString: Untagged
@@ -2574,6 +2603,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071683832}
   m_CullTransparentMesh: 1
+--- !u!114 &1071683836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071683832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 3
 --- !u!1 &1146200955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2627,7 @@ GameObject:
   - component: {fileID: 1146200956}
   - component: {fileID: 1146200958}
   - component: {fileID: 1146200957}
+  - component: {fileID: 1146200959}
   m_Layer: 5
   m_Name: Tea Set
   m_TagString: Untagged
@@ -2657,6 +2700,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146200955}
   m_CullTransparentMesh: 1
+--- !u!114 &1146200959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146200955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 7
 --- !u!1 &1147801867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,6 +2807,7 @@ GameObject:
   - component: {fileID: 1164840375}
   - component: {fileID: 1164840377}
   - component: {fileID: 1164840376}
+  - component: {fileID: 1164840378}
   m_Layer: 5
   m_Name: Eifel Tower
   m_TagString: Untagged
@@ -2823,6 +2880,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164840374}
   m_CullTransparentMesh: 1
+--- !u!114 &1164840378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164840374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 7
 --- !u!1 &1192287240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,6 +4293,7 @@ GameObject:
   - component: {fileID: 1812815862}
   - component: {fileID: 1812815864}
   - component: {fileID: 1812815863}
+  - component: {fileID: 1812815865}
   m_Layer: 5
   m_Name: Saxaphone
   m_TagString: Untagged
@@ -4295,6 +4366,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812815861}
   m_CullTransparentMesh: 1
+--- !u!114 &1812815865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812815861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b31df0c9f1feb48ab5e1a4e8f4ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: 7
 --- !u!1 &1819059145
 GameObject:
   m_ObjectHideFlags: 0
