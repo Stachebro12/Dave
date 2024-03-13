@@ -24,6 +24,7 @@ public class guard : MonoBehaviour
         if(bribeNum >= bribeReq)
         {
             GetComponent<sight>().enabled = false;
+            StunAnim.SetTrigger("stun");
         }
     }
     public void bribe()
