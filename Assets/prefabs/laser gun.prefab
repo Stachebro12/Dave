@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1188350946264248423}
   - component: {fileID: 7250440995203663639}
   - component: {fileID: 5656271763382684627}
-  - component: {fileID: 6872435055628489406}
+  - component: {fileID: 5709982001591035768}
   m_Layer: 10
   m_Name: laser
   m_TagString: Untagged
@@ -216,7 +216,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009236146, y: -0.027123272}
@@ -232,7 +232,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2611132, y: 1.5561022}
   m_EdgeRadius: 0
---- !u!114 &6872435055628489406
+--- !u!114 &5709982001591035768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,6 +241,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8328415612283479816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ac5c4fecd593948abd9aa240aa1355, type: 3}
+  m_Script: {fileID: 11500000, guid: be00876940138a246952ef8ed40a6cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

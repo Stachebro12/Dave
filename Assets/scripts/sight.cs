@@ -7,11 +7,13 @@ public class sight : MonoBehaviour
     private GameObject canvas;
 
     public bool HasSeen = false;
+    public GameObject loadScreen;
 
     private void Awake()
     {
         canvas = GameObject.Find("HUD");
         alienNum = canvas.GetComponent<Stats>().alienNum;
+        loadScreen = GameObject.Find("load screen");
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class sight : MonoBehaviour
             {
                 if (canvas.GetComponent<Stats>().givenDisguise == 0 && HasSeen == false)
                 {
+                    loadScreen.SetActive(true);
                     canvas.transform.Find("Panel").gameObject.SetActive(true);
                     canvas.GetComponent<MainMenu>().ExtractNum();
                     canvas.GetComponentInChildren<DayCounter>().timePassing();

@@ -8,6 +8,7 @@ public class return_button : MonoBehaviour
     public AudioSource ButtonSound;
     private GameObject canvas;
     private int alienNum;
+    public GameObject loadScreen;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class return_button : MonoBehaviour
     public void Return_button()
     {
         //ButtonSound.Play();
+        loadScreen.SetActive(true);
         alienNum = canvas.GetComponent<Stats>().alienNum;
         canvas.transform.Find("Panel").gameObject.SetActive(true);
         canvas.GetComponent<MainMenu>().ExtractNum();
