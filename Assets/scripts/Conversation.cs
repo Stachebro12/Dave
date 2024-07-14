@@ -14,7 +14,7 @@ public class Conversation : MonoBehaviour
     private float smallPause = 0.5f;
     private float bigPause = 1f;
     private bool isWaiting = false;
-    private string thisSucks;
+    private string currentLine;
     public Dialogue dialogue; //This draws from the Dialogue script.
     private Queue<string> lines; //The lines of text in the dialogue. Note that this is a queue.
     private Queue<Sprite> images;
@@ -42,8 +42,7 @@ public class Conversation : MonoBehaviour
     private bool mustChoose = false;
     private bool doSkip = false;
 
-    void Awake()
-    {
+    void Awake() {
         canvas = GameObject.Find("HUD"); //Finds the canvas in the scene, before anything else.
         stats = canvas.GetComponent<Stats>();
         dayCounter = canvas.transform.Find("Day").GetComponent<DayCounter>();
@@ -51,41 +50,32 @@ public class Conversation : MonoBehaviour
         conversation = GetComponent<Conversation>();
     }
 
-    void Start()
-    {
-        if (autoStart)
-        {
+    void Start() {
+        if (autoStart) {
             Begin();
         }
     }
 
-    void Update()
-    {
-        if (started && Input.GetButtonDown("Submit"))
-        {
-            if (isDone && !mustChoose && !doSkip)
-            {
+    void Update() {
+        if (started && Input.GetButtonDown("Submit")) {
+            if (isDone && !mustChoose && !doSkip) {
                 NextLine(); //This allows the player to advance to the next line with input. Going forward, we'd probably want this to fill in the textbox if it hasn't finished typing.
             }
-            else
-            {
+            else {
                 isDone = true;
-                if (isWaiting)
-                {
+                if (isWaiting) {
                     StopAllCoroutines();
-                    StartCoroutine(TypeSentence(thisSucks.Substring(content.text.Length + 1, (thisSucks.Length - content.text.Length) - 1)));
+                    StartCoroutine(TypeSentence(currentLine.Substring(content.text.Length + 1, (currentLine.Length - content.text.Length) - 1)));
                 }
             }
-            if (doSkip)
-            {
+            if (doSkip) {
                 doSkip = false;
                 Requeue(Convert.ToInt32(instructions[instrucIndex].Substring(6, 2)), 0);
             }
         }
     }
 
-    public void Begin()
-    {
+    public void Begin() {
         lines = new Queue<string>();
         lines.Clear();
         images = new Queue<Sprite>();
@@ -107,27 +97,23 @@ public class Conversation : MonoBehaviour
         newprefab.transform.SetParent(canvas.transform);
         content = newprefab.transform.Find("Content").GetComponent<TMP_Text>();
         marker = newprefab.transform.Find("Marker").gameObject;
-        if (stats.dictionaries > 0)
-        {
+        if (stats.dictionaries > 0) {
             GameObject dict = Instantiate(importantButton, new Vector3(1750, 850, 0), Quaternion.identity);
             dict.transform.SetParent(canvas.transform);
         }
         NextLine();
     }
 
-    public void Requeue(int lineSkip, int changePP)
-    { //This clears the queue and enqueues the dialogue array all over again from a certain point.
+    public void Requeue(int lineSkip, int changePP) { //This clears the queue and enqueues the dialogue array all over again from a certain point.
         ppScript.IncreasePP(ppValues[changePP]);
         lines.Clear();
         images.Clear();
         string[] newLines = dialogue.sentences.Skip(lineSkip).Take(dialogue.sentences.Length - lineSkip).ToArray();
         Sprite[] newImages = dialogue.daves.Skip(lineSkip).Take(dialogue.daves.Length - lineSkip).ToArray();
-        foreach (string s in newLines)
-        {
+        foreach (string s in newLines) {
             lines.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
         }
-        foreach (Sprite s in newImages)
-        {
+        foreach (Sprite s in newImages) {
             images.Enqueue(s); //This loops though all of the lines in the array and appends them to the queue.
         }
         instrucIndex = lineSkip - 1; //We also need to have the correct indicator of which instruction to execute.
@@ -136,32 +122,27 @@ public class Conversation : MonoBehaviour
         NextLine();
     }
 
-    private void NextLine()
-    {
+    private void NextLine() {
         marker.SetActive(false);
         instrucIndex++;
         isMain = false;
-        if (lines.Count == 0)
-        {
+        if (lines.Count == 0) {
             EndDialogue(alien, backToMenu);
             return;
         }
         Sprite newDave = images.Dequeue();
-        if (newDave != null)
-        {
+        if (newDave != null) {
             thisDave.GetComponent<Image>().sprite = newDave;
         }
         string line = lines.Dequeue(); //The Dequeue function will remove the next item from the queue and return it's value.
-        thisSucks = line;
-        if (line.Substring(0, 3) == "\\m ")
-        { //Parses the stirng for '\m ' to determine if it is the main character speaking/thinking.
+        if (line.Substring(0, 3) == "\\m ") { //Parses the stirng for '\m ' to determine if it is the main character speaking/thinking.
             line = line.Substring(3, line.Length - 3); //Make sure the dialogue is not less than 3 characters.
             isMain = true;
         }
+        currentLine = line;
         content.text = ""; //Resets the text.
         content.color = Color.white; //Changes the character back to white for the Dave's dialogue. No if statement needed, it would do nothing.
-        if (isMain)
-        {
+        if (isMain) {
             content.color = Color.cyan; //Changes the color to cyan if it is the character speaking/thinking.
         }
         StopAllCoroutines(); //Stops writing the line. Otherwise, we could potentially have two lines typing at once.
@@ -170,8 +151,7 @@ public class Conversation : MonoBehaviour
         StartCoroutine(TypeSentence(line)); //Types the sentence gradually.
     }
 
-    public void ShowChoices()
-    {
+    public void ShowChoices() {
         mustChoose = true; //This sets a variable that prevents the player from advancing the dialogue without choosing.
         GameObject newChoices = Instantiate(choicePanel, new Vector3(950, 550, 0), Quaternion.identity); //This instantiates the choice panel.
         newChoices.transform.SetParent(canvas.transform);
@@ -181,98 +161,76 @@ public class Conversation : MonoBehaviour
         //You must input three numbers, one for each line that is an option. They must be 2 digit i.e. 04 instead of 4.
     }
 
-    private void EndDialogue(int alienNum, bool doLoad)
-    {
+    private void EndDialogue(int alienNum, bool doLoad) {
         Destroy(content.gameObject.transform.parent.gameObject);
         Destroy(thisDave);
         stats.dateUp();
         canvas.GetComponent<MainMenu>().ExtractNum();
         dayCounter.timePassing();
-        if (GameObject.Find("Lose") != null)
-        {
-            if (alienNum == 1)
-            {
+        if (GameObject.Find("Lose") != null) {
+            if (alienNum == 1) {
                 SceneManager.LoadScene("french lose");
             }
-            else if (alienNum == 2)
-            {
+            else if (alienNum == 2) {
                 SceneManager.LoadScene("queen lose");
             }
         }
-        else
-        {
+        else {
             canvas.transform.Find("Panel").gameObject.SetActive(true);
-            if (alienNum == 1)
-            {
+            if (alienNum == 1) {
                 SceneManager.LoadScene("french_Main");
             }
-            else if (alienNum == 2)
-            {
+            else if (alienNum == 2) {
                 SceneManager.LoadScene("queen_Main");
             }
-            else if (alienNum == 3)
-            {
+            else if (alienNum == 3) {
                 SceneManager.LoadScene("empathetic_Main");
             }
         }
     }
 
-    IEnumerator TypeSentence(string sentece)
-    {
-        if (started == false)
-        {
+    IEnumerator TypeSentence(string sentece) {
+        if (started == false) {
             yield return null;
             started = true;
         }
-        foreach (char letter in sentece.ToCharArray())
-        {
-            if (letter != '\\' && letter != '|')
-            { //These characters are used for pauses. \ is a small pause, | is a big pause.
+        foreach (char letter in sentece.ToCharArray()) {
+            if (letter != '\\' && letter != '|') { //These characters are used for pauses. \ is a small pause, | is a big pause.
                 content.text += letter;
             }
             float newTime;
-            if (letter == '\\')
-            {
+            if (letter == '\\') {
                 newTime = smallPause;
             }
-            else if (letter == '|')
-            {
+            else if (letter == '|') {
                 newTime = bigPause;
             }
-            else
-            {
+            else {
                 newTime = pauseTime;
             }
-            if (!isDone)
-            { //If the player inputs, we want to enter in the rest of the dialogue all at once.
-                if (newTime > pauseTime)
-                {
+            if (!isDone) { //If the player inputs, we want to enter in the rest of the dialogue all at once.
+                if (newTime > pauseTime) {
                     isWaiting = true;
                 }
                 yield return new WaitForSeconds(newTime);
-                if (isWaiting)
-                {
+                if (isWaiting) {
                     isWaiting = false;
                 }
             }
         }
         isDone = true;
-        if (instructions[instrucIndex].Length == 28)
-        { //This detects if one of the instructions is meant to instantiate a choice menu.
+        if (instructions[instrucIndex].Length == 28) { //This detects if one of the instructions is meant to instantiate a choice menu.
             ShowChoices();
         }
-        else
-        {
+        else {
             marker.SetActive(true);
-            if (instructions[instrucIndex].Substring(0, 4) == "skip")
-            { //This instruction is for skipping to another line in the sequence. This is impotant for dialogue trees.
+            if (instructions[instrucIndex].Substring(0, 4) == "skip") { //This instruction is for skipping to another line in the sequence. This is impotant for dialogue trees.
                 doSkip = true;
             }
         }
     }
 
-    public IEnumerable GetLine(int specLine)
-    { //This returns a specific line from the dialogue manager. It is used for the choice menu.
+    public IEnumerable GetLine(int specLine) { //This returns a specific line from the dialogue manager. It is used for the choice menu.
         return dialogue.sentences[specLine].Substring(3, dialogue.sentences[specLine].Length - 3).Replace("\\", "").Replace("|", "");
     }
 }
