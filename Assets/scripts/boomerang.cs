@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -10,6 +11,7 @@ public class boomerang : MonoBehaviour
     public Transform player;
     public float speed = 1f;
     public float velocity;  // this is the speed that I'll move in the direction of my orientation
+    public float distToDestroy;
 
     // Use this for initialization
     void Start()
@@ -24,6 +26,11 @@ public class boomerang : MonoBehaviour
 
         StartCoroutine("TurnBack");
         enabled = false;
+    }
+
+    void OnCollisionEnter2D()
+    {
+        enabled = true;
     }
 
     IEnumerator TurnBack()
@@ -41,6 +48,10 @@ public class boomerang : MonoBehaviour
         if (Vector2.Distance(player.position, transform.position) > 0f)
         {
             transform.position += (displacement * speed * Time.deltaTime);
+        }
+        if (Vector2.Distance(player.position, transform.position) < distToDestroy)
+        {
+            Destroy (gameObject);
         }
     }
 }

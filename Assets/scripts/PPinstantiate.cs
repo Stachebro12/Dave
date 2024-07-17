@@ -7,16 +7,21 @@ public class PPinstantiate : MonoBehaviour
     public KeyCode key;             // which key
     public Transform instantiate;   // causes what to be created?
     public float delayTime;         // what is the minimum time?
-    public GameObject pp;
     public int cost;
 
     private float ppAmount;
     private float timer = 0;
+    private GameObject canvas;
+
+    private void Awake()
+    {
+        canvas = GameObject.Find("HUD");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        ppAmount = pp.GetComponentInChildren<PP>().ppNum;
+        ppAmount = canvas.GetComponentInChildren<PP>().ppNum;
         // if there's a delay between keypresses imposed, let the time run down
         if (timer > 0)
         {
@@ -28,7 +33,7 @@ public class PPinstantiate : MonoBehaviour
         if (Input.GetKeyDown(key) && ppAmount > 0)
         {
             Instantiate(instantiate, transform.position, transform.rotation);
-            pp.GetComponentInChildren<PP>().UsePP(cost);
+            canvas.GetComponentInChildren<PP>().UsePP(cost);
             timer = delayTime;
         }
     }

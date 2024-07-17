@@ -5,11 +5,17 @@ using UnityEngine;
 public class one_way_door : MonoBehaviour
 {
     public GameObject parent;
-    public void OnCollisionEnter2D(Collision2D collision)
+    private Animator open;
+
+    void Start()
+    {
+        open = gameObject.GetComponent<Animator>();
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            Destroy(parent);
+            open.SetTrigger("open_door_1");
         }
     }
 }

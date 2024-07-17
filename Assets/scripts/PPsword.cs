@@ -6,13 +6,17 @@ public class PPsword : MonoBehaviour
 {
     public KeyCode attack;
     public GameObject weapon;
-    public GameObject pp;
+    private GameObject pp;
     public float StabTime;
     public int cost;
     
     private float ppAmount;
     private float timer = 0;
     private float DelayTime;
+    private void Start()
+    {
+        pp = GameObject.Find("PP");
+    }
     // Update is called once per frame
     void Update()
     {

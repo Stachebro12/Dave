@@ -8,15 +8,34 @@ public class PP : MonoBehaviour
 {
     public Text PPText;
 
-    public float ppNum;
+    public int ppNum;
+    public int ppMax;
 
     // Update is called once per frame
     public void UsePP(int cost)
     {
         ppNum -= cost;
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
-    void Update()
+    public void IncreasePP(int Gains)
     {
-        PPText.text = "PP: " + ppNum;
+        Debug.Log(Gains);
+        ppMax += Gains;
+        if (ppNum > -Gains)
+        {
+            ppNum += Gains;
+        }
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
+    }
+
+    public void RestorePP()
+    {
+        ppNum = ppMax;
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
+    }
+
+    void Start()
+    {
+        PPText.text = "PP: " + ppNum + "/" + ppMax;
     }
 }
