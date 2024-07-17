@@ -745,7 +745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonSound: {fileID: 0}
   date: 0
-  isMain: 0
+  isMain: 1
+  AreaSelect: {fileID: 0}
+  loadScreen: {fileID: 0}
 --- !u!1 &1383676366
 GameObject:
   m_ObjectHideFlags: 0
