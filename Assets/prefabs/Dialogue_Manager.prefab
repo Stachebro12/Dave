@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoStart: 1
-  pauseTime: 0.05
+  pauseTime: 0.02
   dialogue:
     dave: 
     sentences: []
