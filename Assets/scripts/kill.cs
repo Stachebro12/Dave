@@ -9,13 +9,13 @@ public class kill : MonoBehaviour
     private GameObject player;
     private int alienNum;
 
-    public GameObject loadScreen;
+    private GameObject loadScreen;
 
     private void Awake()
     {
         canvas = GameObject.Find("HUD");
         player = GameObject.Find("Player");
-        loadScreen = GameObject.Find("load screen");
+        loadScreen = GameObject.Find("Loadscreen_parent");
     }
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class kill : MonoBehaviour
         {
             if (canvas.GetComponent<Stats>().givenArmour == 0)
             {
-                loadScreen.SetActive(true);
+                loadScreen.GetComponent<loading_for_parents>().loading();
                 alienNum = canvas.GetComponent<Stats>().alienNum;
                 canvas.transform.Find("Panel").gameObject.SetActive(true);
                 canvas.GetComponent<MainMenu>().ExtractNum();
