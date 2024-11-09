@@ -327,9 +327,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Benjamin Davis: Lead Designer, Tactical Espionage Programmer and Level
-    Designer - Alexei Shortis: Dating Sim Programmer - Alexander Christensen: Lead
-    Writer - Thuy (Eli) Nguyen: Artist'
+  m_Text: 'Benjamin Davis: Lead Designer, Tactical Espionage Programmer, Writer and
+    Level Designer - Alexei Shortis: Dating Sim Programmer - Thuy (Eli) Nguyen: Artist'
 --- !u!222 &416866187
 CanvasRenderer:
   m_ObjectHideFlags: 0
