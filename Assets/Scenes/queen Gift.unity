@@ -1350,12 +1350,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d73649fc72d57246a7c82c5b9ee890f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FTEDictionary_PP: 1
+  FTEDictionary_PP: 5
   HPCrown_PP: 9
   TrenchCoat_PP: -3
   FakeID_PP: -5
   ToyGun_PP: -1
-  FacePaint_PP: 5
+  FacePaint_PP: 4
   TeaSet_PP: 10
   Saxaphone_PP: 2
   EifelTower_PP: -3
