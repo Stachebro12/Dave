@@ -71,6 +71,9 @@ public class Stats : MonoBehaviour {
 
     public void dateUp() {
         dateNum++;
+        if (dateNum == origiDate + 7 && alienNum == 3) {
+            canContinue = true;
+        }
         if (dateNum == origiDate + 6 && alienNum != 3) {
             int pp = dayCounter.PP;
             int PPRequirement = dayCounter.PPRequirement;
@@ -87,6 +90,10 @@ public class Stats : MonoBehaviour {
             }
             if (alienNum == 2) {
                 dateNum = 26;
+            }
+            if (alienNum == 3)
+            {
+                dateNum = 37;
             }
         }
     }
