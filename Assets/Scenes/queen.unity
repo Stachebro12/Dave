@@ -1413,25 +1413,26 @@ MonoBehaviour:
   loadScreen: {fileID: 694556000}
   bgComments:
   - key: {fileID: 21300000, guid: 12564d4f12a7d8947b47a670acaf1e18, type: 3}
-    value: Wow! This place has a nice atmosphere.
+    value: Oh, Is this where the peasantry hang out.
   - key: {fileID: 21300000, guid: e343514afcb8177438e07ce0e37095b3, type: 3}
-    value: Wow! I've never been to a miad cafe before!
+    value: Well I do love the staff. They remind me of home.
   - key: {fileID: 21300000, guid: fb4129e045f981f4190e84bc6d768c9d, type: 3}
-    value: Dummy dialgoue.
+    value: Ah, now this is a familiar hall, thank you.
   - key: {fileID: 21300000, guid: a7809b401b43e144b8df823486bff332, type: 3}
-    value: Dummy dialgoue.
+    value: Oh, France. What a beautiful country.
   - key: {fileID: 21300000, guid: 51897238aff076a4988eb7181b226a81, type: 3}
-    value: Dummy dialgoue.
+    value: Ew. What dingy, backwater planet have you taken me to.
   - key: {fileID: 21300000, guid: d9d7e6113d3e60d49817cbef66d02e97, type: 3}
-    value: Dummy dialgoue.
+    value: Hmm, America. I suppose I don't dislike this place.
   - key: {fileID: 21300000, guid: 6994a21fe0e71544ba99f5fe1afe63bd, type: 3}
-    value: Dummy dialgoue.
+    value: It is a large mountain. However, it is nowhere near the size of my kingdom.
   - key: {fileID: 21300000, guid: 26fb22a3665015f44ba239072d515094, type: 3}
-    value: Dummy dialgoue.
+    value: This rock cannot even reach the status of a true planet. It is unfit for
+      my presence.
   - key: {fileID: 21300000, guid: 09059accf857a854cbb31bfc518d9418, type: 3}
-    value: Dummy dialgoue.
+    value: Hmm, I am not fond of this place, it's leader always kept me waiting.
   - key: {fileID: 21300000, guid: bc8aa1644275bcd43b034903ecee3809, type: 3}
-    value: Dummy dialgoue.
+    value: Well this is a most majestic sight. Why, thank you.
 --- !u!114 &551969967
 MonoBehaviour:
   m_ObjectHideFlags: 0

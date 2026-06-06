@@ -3186,23 +3186,24 @@ MonoBehaviour:
   - key: {fileID: 21300000, guid: 12564d4f12a7d8947b47a670acaf1e18, type: 3}
     value: Wow! This place has a nice atmosphere.
   - key: {fileID: 21300000, guid: e343514afcb8177438e07ce0e37095b3, type: 3}
-    value: Wow! I've never been to a miad cafe before!
+    value: Ooh. They all look so cute.
   - key: {fileID: 21300000, guid: fb4129e045f981f4190e84bc6d768c9d, type: 3}
-    value: Dummy dialgoue.
+    value: Ooh, How fancy.
   - key: {fileID: 21300000, guid: a7809b401b43e144b8df823486bff332, type: 3}
-    value: Dummy dialgoue.
+    value: What a fantastique view!
   - key: {fileID: 21300000, guid: 51897238aff076a4988eb7181b226a81, type: 3}
-    value: Dummy dialgoue.
+    value: This planet must be very cozy.
   - key: {fileID: 21300000, guid: d9d7e6113d3e60d49817cbef66d02e97, type: 3}
-    value: Dummy dialgoue.
+    value: Wow, it's so much bigger up close.
   - key: {fileID: 21300000, guid: 6994a21fe0e71544ba99f5fe1afe63bd, type: 3}
-    value: Dummy dialgoue.
+    value: Mars has such stunning mountains.
   - key: {fileID: 21300000, guid: 26fb22a3665015f44ba239072d515094, type: 3}
-    value: Dummy dialgoue.
+    value: Even though it was demoted to a dwarph planet, it's still a real planet
+      in my heart.
   - key: {fileID: 21300000, guid: 09059accf857a854cbb31bfc518d9418, type: 3}
-    value: Dummy dialgoue.
+    value: Hehe, what a colorful building.
   - key: {fileID: 21300000, guid: bc8aa1644275bcd43b034903ecee3809, type: 3}
-    value: Dummy dialgoue.
+    value: Wow, such a pretty planet.
 --- !u!114 &937656237
 MonoBehaviour:
   m_ObjectHideFlags: 0
