@@ -70,7 +70,7 @@ public class Conversation : MonoBehaviour
             }
             if (doSkip) {
                 doSkip = false;
-                Requeue(Convert.ToInt32(instructions[instrucIndex].Substring(6, 2)), 0);
+                Requeue(Convert.ToInt32(instructions[instrucIndex].Substring(6, 2)), 3);
             }
         }
     }
@@ -111,7 +111,9 @@ public class Conversation : MonoBehaviour
     }
 
     public void Requeue(int lineSkip, int changePP) { //This clears the queue and enqueues the dialogue array all over again from a certain point.
-        ppScript.IncreasePP(ppValues[changePP]);
+        if (changePP < 3) {
+            ppScript.IncreasePP(ppValues[changePP]);
+        }
         lines.Clear();
         images.Clear();
         string[] newLines = dialogue.sentences.Skip(lineSkip).Take(dialogue.sentences.Length - lineSkip).ToArray();
@@ -161,7 +163,7 @@ public class Conversation : MonoBehaviour
         GameObject newChoices = Instantiate(choicePanel, new Vector3(950, 550, 0), Quaternion.identity); //This instantiates the choice panel.
         newChoices.transform.SetParent(canvas.transform);
         Choice_Manager choiceManager = newChoices.GetComponent<Choice_Manager>();
-        ppValues = new int[] { Convert.ToInt32(instructions[instrucIndex].Substring(11, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(18, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(25, 2)) };
+        ppValues = new int[] {Convert.ToInt32(instructions[instrucIndex].Substring(11, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(18, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(25, 2))};
         choiceManager.Options(Convert.ToInt32(instructions[instrucIndex].Substring(8, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(15, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(22, 2)), conversation);
         //You must input three numbers, one for each line that is an option. They must be 2 digit i.e. 04 instead of 4.
     }
