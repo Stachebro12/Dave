@@ -513,6 +513,7 @@ MonoBehaviour:
   isMain: 0
   AreaSelect: {fileID: 1248719768}
   loadScreen: {fileID: 1695337795}
+  AreaSelects: {fileID: 1550750766}
   bgComments:
   - key: {fileID: 21300000, guid: 12564d4f12a7d8947b47a670acaf1e18, type: 3}
     value: Hmm, je ne suis pas un grand fan de jazz. Est-ce qu'ils jouent au moins

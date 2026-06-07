@@ -1411,6 +1411,7 @@ MonoBehaviour:
   isMain: 0
   AreaSelect: {fileID: 542437175}
   loadScreen: {fileID: 694556000}
+  AreaSelects: {fileID: 1278369639}
   bgComments:
   - key: {fileID: 21300000, guid: 12564d4f12a7d8947b47a670acaf1e18, type: 3}
     value: Oh, Is this where the peasantry hang out.
