@@ -37,7 +37,6 @@ public class Conversation : MonoBehaviour
     private GameObject thisDave;
     public int alien; //Right now we'll set this in the inspector. This will determine what scene we load when the alien is caught.
     public bool backToMenu = true; //This will return you to the menu if set to true.
-    private bool isMain = false; //This variable determines whether the dialogue is for the main character or the Dave.
     private bool isDone = false;
     private bool mustChoose = false;
     private bool doSkip = false;
@@ -133,7 +132,6 @@ public class Conversation : MonoBehaviour
     private void NextLine() {
         marker.SetActive(false);
         instrucIndex++;
-        isMain = false;
         if (lines.Count == 0) {
             EndDialogue(alien, backToMenu);
             return;
@@ -143,16 +141,13 @@ public class Conversation : MonoBehaviour
             thisDave.GetComponent<Image>().sprite = newDave;
         }
         string line = lines.Dequeue(); //The Dequeue function will remove the next item from the queue and return it's value.
-        if (line.Substring(0, 3) == "\\m ") { //Parses the stirng for '\m ' to determine if it is the main character speaking/thinking.
-            line = line.Substring(3, line.Length - 3); //Make sure the dialogue is not less than 3 characters.
-            isMain = true;
-        }
-        currentLine = line;
         content.text = ""; //Resets the text.
         content.color = Color.white; //Changes the character back to white for the Dave's dialogue. No if statement needed, it would do nothing.
-        if (isMain) {
+        if (line.Substring(0, 3) == "\\m ") { //Parses the stirng for '\m ' to determine if it is the main character speaking/thinking.
+            line = line.Substring(3, line.Length - 3); //Make sure the dialogue is not less than 3 characters to avoid problems.
             content.color = Color.cyan; //Changes the color to cyan if it is the character speaking/thinking.
         }
+        currentLine = line;
         StopAllCoroutines(); //Stops writing the line. Otherwise, we could potentially have two lines typing at once.
         isDone = false;
         StartCoroutine(TypeSentence(line)); //Types the sentence gradually.
