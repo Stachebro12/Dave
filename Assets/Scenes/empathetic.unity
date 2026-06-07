@@ -3182,6 +3182,7 @@ MonoBehaviour:
   isMain: 0
   AreaSelect: {fileID: 2067173063}
   loadScreen: {fileID: 122731980}
+  AreaSelects: {fileID: 903556802}
   bgComments:
   - key: {fileID: 21300000, guid: 12564d4f12a7d8947b47a670acaf1e18, type: 3}
     value: Wow! This place has a nice atmosphere.

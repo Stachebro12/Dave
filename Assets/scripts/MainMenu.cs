@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour {
                         //It won't destroy the game, but it will throw an annoying error.
     public GameObject AreaSelect;
     public GameObject loadScreen;
+    public GameObject AreaSelects;
     public static Sprite bgSprite;
 
     [System.Serializable]
@@ -56,6 +57,11 @@ public class MainMenu : MonoBehaviour {
         //I removed the check of Input.GetMouseButtonDown(0). Maybe it's there for a reason, but I can't see it right now.
         if (gameObject.GetComponent<Stats>().checkpoint4) {
             AreaSelect.SetActive(true);
+            for (int i = 0; i < AreaSelects.transform.childCount; i++)
+            {
+                GameObject Areas = AreaSelects.transform.GetChild(i).gameObject;
+                Areas.SetActive(true);
+            }
         }
         else {
             StartDate(bgSprite);
