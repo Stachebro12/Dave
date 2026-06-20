@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Stats : MonoBehaviour {
     public int dateNum;
     private int origiDate;
-    private bool canContinue = false;
+    public bool canContinue = false;
     public int SpawnX;
     public int SpawnY;
     public int alienNum;
@@ -51,8 +51,7 @@ public class Stats : MonoBehaviour {
 
     private DayCounter dayCounter;
 
-    private void Awake()
-    {
+    private void Awake() {
         dayCounter = GetComponentInChildren<DayCounter>();
     }
 
@@ -61,8 +60,7 @@ public class Stats : MonoBehaviour {
         origiDate = dateNum;
     }
 
-    public void Update()
-    {
+    public void Update() {
         Disguise.text = "" + givenDisguise;
         Armour.text = "" + givenArmour;
         Ammo.text = "" + givenToyGun;

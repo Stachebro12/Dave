@@ -27,6 +27,8 @@ public class Conversation : MonoBehaviour
     private Stats stats;
     private DayCounter dayCounter;
     private PP ppScript;
+    private float modifier = 1; //A modifier applied to PP rewards and penalties due to location choice. The modifier is either 2.0, 1.0, or 0.5, and should be written
+                                //at the end of a bg comment.
     private Conversation conversation; //A reference to this very script, which must be given to the Choice_Manager script.
     public GameObject textBox; //The Textbox object. Put this prefab into the field in the inspector. It is instantiated at runtime.
     public GameObject portrait; //The character portrait.
@@ -83,7 +85,8 @@ public class Conversation : MonoBehaviour
         images.Clear();
         foreach (var pair in commentList) {
             if (pair.key == background) {
-                lines.Enqueue(pair.value);
+                modifier = float.Parse(pair.value.Substring(pair.value.Length - 3, 3));
+                lines.Enqueue(pair.value.Substring(0, pair.value.Length - 3));
                 instrucIndex--;
             }
         }
@@ -111,7 +114,9 @@ public class Conversation : MonoBehaviour
 
     public void Requeue(int lineSkip, int changePP) { //This clears the queue and enqueues the dialogue array all over again from a certain point.
         if (changePP < 3) {
-            ppScript.IncreasePP(ppValues[changePP]);
+            ppScript.IncreasePP(Convert.ToInt32(ppValues[changePP] * (modifier + ((0.75 * (((ppValues[changePP] / 2) - 1) * ((ppValues[changePP] / 2) * -1))) * (MathF.Floor(modifier) - 1)))));
+            //This increases PP by the desired ammount when necessary. This algorithm accounts for good and bad locations doubling and/or halving rewards and penalties.This algorithm
+            //may be somewhat confusing and somewhat compromises readability, but it does avoid the use of if statements, making the code cleaner.
         }
         lines.Clear();
         images.Clear();
@@ -166,6 +171,9 @@ public class Conversation : MonoBehaviour
     private void EndDialogue(int alienNum, bool doLoad) {
         Destroy(content.gameObject.transform.parent.gameObject);
         Destroy(thisDave);
+        if (stats.canContinue) {
+            ppScript.IncreasePP(Convert.ToInt32(2 * modifier)); //Increases PP by 2, if the date is a generic date. This increase is affected by location.
+        }
         stats.dateUp();
         canvas.GetComponent<MainMenu>().ExtractNum();
         dayCounter.timePassing();
