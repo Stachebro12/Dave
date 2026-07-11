@@ -22,7 +22,7 @@ public class Conversation : MonoBehaviour
                                    //and skip (##) to skip to a different line.
     private int instrucIndex = -1; //An indicator of which instruction to use.
     private bool started = false; //Whether or not the dialogue has started.
-    private int[] ppValues = new int[] { 0, 0, 0 };
+    private int[] ppValues = new int[] {0, 0, 0, 0};
     private GameObject canvas; //Make sure there is a canvas in whatever scene you use this in.
     private Stats stats;
     private DayCounter dayCounter;
@@ -113,11 +113,9 @@ public class Conversation : MonoBehaviour
     }
 
     public void Requeue(int lineSkip, int changePP) { //This clears the queue and enqueues the dialogue array all over again from a certain point.
-        if (changePP < 3) {
-            ppScript.IncreasePP(Convert.ToInt32(ppValues[changePP] * (modifier + ((0.75 * (((ppValues[changePP] / 2) - 1) * ((ppValues[changePP] / 2) * -1))) * (MathF.Floor(modifier) - 1)))));
-            //This increases PP by the desired ammount when necessary. This algorithm accounts for good and bad locations doubling and/or halving rewards and penalties.This algorithm
-            //may be somewhat confusing and somewhat compromises readability, but it does avoid the use of if statements, making the code cleaner.
-        }
+        ppScript.IncreasePP(Convert.ToInt32(ppValues[changePP] * (modifier + ((0.75 * (((ppValues[changePP] / 2) - 1) * ((ppValues[changePP] / 2) * -1))) * (MathF.Floor(modifier) - 1)))));
+        //This increases PP by the desired ammount when necessary. This algorithm accounts for good and bad locations doubling and/or halving rewards and penalties.This algorithm
+        //may be somewhat confusing and somewhat compromises readability, but it does avoid the use of if statements, making the code cleaner.
         lines.Clear();
         images.Clear();
         string[] newLines = dialogue.sentences.Skip(lineSkip).Take(dialogue.sentences.Length - lineSkip).ToArray();
@@ -163,7 +161,7 @@ public class Conversation : MonoBehaviour
         GameObject newChoices = Instantiate(choicePanel, new Vector3(950, 550, 0), Quaternion.identity); //This instantiates the choice panel.
         newChoices.transform.SetParent(canvas.transform);
         Choice_Manager choiceManager = newChoices.GetComponent<Choice_Manager>();
-        ppValues = new int[] {Convert.ToInt32(instructions[instrucIndex].Substring(11, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(18, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(25, 2))};
+        ppValues = new int[] {Convert.ToInt32(instructions[instrucIndex].Substring(11, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(18, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(25, 2)), 0};
         choiceManager.Options(Convert.ToInt32(instructions[instrucIndex].Substring(8, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(15, 2)), Convert.ToInt32(instructions[instrucIndex].Substring(22, 2)), conversation);
         //You must input three numbers, one for each line that is an option. They must be 2 digit i.e. 04 instead of 4.
     }
