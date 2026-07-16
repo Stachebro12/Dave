@@ -58,8 +58,8 @@ public class Conversation : MonoBehaviour
     }
 
     void Update() {
-        if (started && Input.GetButtonDown("Submit")) {
-            if (isDone && !mustChoose && !doSkip) {
+        if (started && !mustChoose && Input.GetButtonDown("Submit")) {
+            if (isDone && !doSkip) {
                 NextLine(); //This allows the player to advance to the next line with input. Going forward, we'd probably want this to fill in the textbox if it hasn't finished typing.
             }
             else {
